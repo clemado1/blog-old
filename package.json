@@ -29,13 +29,5 @@
     "gulp-shell": "^0.6.5",
     "gulp-uglify": "^3.0.0"
   },
-  "dependencies": {
-    "tachyons-aspect-ratios": "^1.0.1",
-    "tachyons-background-size": "^5.0.5",
-    "tachyons-max-widths": "^4.0.5",
-    "tachyons-skins": "^4.1.0",
-    "tachyons-spacing": "^6.0.4",
-    "tachyons-type-scale": "^6.1.0",
-    "tachyons-utilities": "^2.1.0"
-  }
+  "dependencies": {}
 }
