@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS&ubuntu&tomcat8&letsencrypt 1"
-tags: [aws], [letsencrypt]
+tags: [aws, letsencrypt]
 ---
 
 ### https로 정상진입한 모습
