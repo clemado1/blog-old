@@ -36,13 +36,13 @@ jdk설치 완료. 다음을 통해 자바 버전을 확인한다.
 뒤의 주소는 [톰캣8 다운로드 페이지](http://tomcat.apache.org/download-80.cgi)에서 `Core : tar.gz`의 링크주소이다. 그래서 지금은 8.5.34 버전을 이용하지만 버전이 업그레이드 되면 다운로드 페이지에서 다시 링크주소를 복사해야한다.  
 
 압축해제  
-`sudo tar -xzvf apache-tomcat-8.5.34.tar.gz  
-	sudo mv apache-tomcat-8.5.34 /opt/tomcat`  
+`sudo tar -xzvf apache-tomcat-8.5.34.tar.gz`  
+`sudo mv apache-tomcat-8.5.34 /opt/tomcat`
 
 좀전에 만들어 둔 tomcat유저에게 이 폴더의 권리를 준다.  
-`sudo chgrp -R tomcat /opt/tomcat  
-	sudo chown -R tomcat /opt/tomcat  
-    sudo chmod -R 755 /opt/tomcat`
+`sudo chgrp -R tomcat /opt/tomcat`  
+`sudo chown -R tomcat /opt/tomcat`  
+`sudo chmod -R 755 /opt/tomcat`  
 
 #### tomcat service 등록
 tomcat을 서비스로 사용하기 위해서 새로운 service파일을 생성한다. 그전에 먼저 설치해 둔 java 경로를 조회해야한다.  
@@ -57,7 +57,7 @@ Nothing to configure.
 `sudo nano /etc/systemd/system/tomcat.service`  
 
 내용은 다음과 같다.  
-`
+```
     [Unit]  
     Description=Apache Tomcat Web Server  
     After=network.target  
@@ -83,7 +83,7 @@ Nothing to configure.
 
     [Install]  
     WantedBy=multi-user.target  
-`  
+```
 `nano`는 `ctrl+w - enter - crtl+x` 로 저장 및 종료할 수 있다.
 설정을 갱신하기 위해 `sudo systemctl daemon-reload`  
 이제 systemsctl 명령어를 통해 톰캣을 제어할 수 있다.  
@@ -125,10 +125,14 @@ Nothing to configure.
 
 `sudo nano /opt/tomcat/webapps/manager/META-INF/context.xml`  
 하나밖에 없는 context 태그에서  
-`allow="내\.집\.아이\.피|127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />`  
+```
+allow="내\.집\.아이\.피|127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+```  
 
 `sudo nano /opt/tomcat/webapps/host-manager/META-INF/context.xml`  
-`allow="내\.집\.아이\.피|127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />`  
+```
+allow="내\.집\.아이\.피|127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+```  
 
 모두 수정했으면 `sudo systemctl restart tomcat` 톰캣을 재시작한다.  
 
@@ -149,7 +153,8 @@ collation-server = utf8mb4_unicode_ci
 JDBC 드라이버 설치  
 `apt-get install libmysql-java`  
 `/usr/share/java/mysql-connector-java.jar` 위치에 설치된다.  
-`ln -s /usr/share/java/mysql-connector-java.jar /opt/tomcat/lib/mysql-connector-java.jar'  
+`ln -s /usr/share/java/mysql-connector-java.jar /opt/tomcat/lib/mysql-connector-java.jar`  
+소프트링크 연결  
 
 `sudo systemctl restart tomcat`  
 
