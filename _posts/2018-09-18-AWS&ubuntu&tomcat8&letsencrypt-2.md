@@ -46,7 +46,7 @@ jdk설치 완료. 다음을 통해 자바 버전을 확인한다.
 
 #### tomcat service 등록
 tomcat을 서비스로 사용하기 위해서 새로운 service파일을 생성한다. 그전에 먼저 설치해 둔 java 경로를 조회해야한다.  
-`sudo update-alternatives --config java'  
+`sudo update-alternatives --config java`  
 ```
 There is only one alternative in link group java (providing /usr/bin/java): /usr/lib/jvm/java-11-openjdk-amd64/bin/java
 Nothing to configure.
@@ -56,7 +56,7 @@ Nothing to configure.
 
 `sudo nano /etc/systemd/system/tomcat.service`  
 
-내용은 다음과 같다.  
+새로 생성했기 때문에 기본 내용은 공백이다. 작성할 내용은 다음과 같다.  
 ```
     [Unit]  
     Description=Apache Tomcat Web Server  
@@ -86,10 +86,11 @@ Nothing to configure.
 ```
 `nano`는 `ctrl+w - enter - crtl+x` 로 저장 및 종료할 수 있다.
 설정을 갱신하기 위해 `sudo systemctl daemon-reload`  
+
 이제 systemsctl 명령어를 통해 톰캣을 제어할 수 있다.  
 
-`sudo systemctl start tomcat  
-	sudo systemctl status tomcat`
+`sudo systemctl start tomcat`  
+`sudo systemctl status tomcat`  
 ```
 ● tomcat.service - Apache Tomcat Web Server
    Loaded: loaded (/etc/systemd/system/tomcat.service; enabled; vendor preset: e
@@ -105,6 +106,7 @@ Nothing to configure.
 `active(running)` 이 나와야한다!  
 톰캣 서비스를 지속적으로 사용하기 위해  
 `sudo systemctl enable tomcat`  
+
 그리고 방화벽 ufw에 톰캣이 사용하는 8080을 허락해 준 뒤  
 `sudo ufw allow 8080`  
 
@@ -122,12 +124,14 @@ Nothing to configure.
 <user username="유저네임" password="비밀번호" roles="manager-gui,admin-gui"/>
 ```
 그리고 `context.xml`파일도 수정하자.  
-
 `sudo nano /opt/tomcat/webapps/manager/META-INF/context.xml`  
+
 하나밖에 없는 context 태그에서  
 ```
 allow="내\.집\.아이\.피|127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
 ```  
+이렇게 수정한다.  
+
 
 `sudo nano /opt/tomcat/webapps/host-manager/META-INF/context.xml`  
 ```
@@ -152,9 +156,11 @@ collation-server = utf8mb4_unicode_ci
 
 JDBC 드라이버 설치  
 `apt-get install libmysql-java`  
+
 `/usr/share/java/mysql-connector-java.jar` 위치에 설치된다.  
-`ln -s /usr/share/java/mysql-connector-java.jar /opt/tomcat/lib/mysql-connector-java.jar`  
+
 소프트링크 연결  
+`ln -s /usr/share/java/mysql-connector-java.jar /opt/tomcat/lib/mysql-connector-java.jar`  
 
 `sudo systemctl restart tomcat`  
 
