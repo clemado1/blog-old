@@ -174,4 +174,6 @@ window에서 mysqldump 파일을 만들고 파일질라등을 통해 ubuntu에 �
 
 배포를 위해 `http://elastic-ip/manager/html` 매니저 페이지로 진입. `tomcat-users.xml`에서 등록한 이름과 비밀번호를 통해 로그인 한다.  
 
+![image]({{ site.baseurl }}/assets/img/pexels/manager.png)  
+
 war파일 등록. 이제 `http://elastic-ip:8080/프로젝트이름`을 통해 프로젝트를 확인할 수 있다.
