@@ -140,6 +140,10 @@ allow="내\.집\.아이\.피|127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
 
 모두 수정했으면 `sudo systemctl restart tomcat` 톰캣을 재시작한다.  
 
+
+- - -
+
+
 ### MySQL 설치
 `sudo apt-get install mysql-server`  
 `sudo apt-get install mysql-client`  
@@ -166,7 +170,7 @@ JDBC 드라이버 설치
 
 DB는 순수하게 ubuntu에서 생성할 수도 있고, 윈도우에서 원격으로 접속할 수도 있고, dump파일을 파일질라로 복사할 수도 있다. 여기선 원격 접속만 설명하겠다.  
 
-##### MySQL 원격 접속
+#### MySQL 원격 접속
 먼저 ubuntu에서 **mysql**에 접속해 **user**를 생성하고 권한을 부여한다.  
 ```
 mysql -u root -p
@@ -191,6 +195,10 @@ window cmd창을 열고 `mysql -h elastic-ip -u username -p` 비밀번호 입력
 
 
 만약 파일질라를 통해 dump파일을 옮기면 권한문제가 생길 수 있는데, `chown -R ubuntu /경로` 와 `chmod  -R 777 /경로`를 통해 해결한다.
+
+
+
+- - -
 
 
 ### war파일 배포
