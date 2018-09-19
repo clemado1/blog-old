@@ -164,8 +164,33 @@ JDBC 드라이버 설치
 
 `sudo systemctl restart tomcat`  
 
-window에서 mysqldump 파일을 만들고 파일질라등을 통해 ubuntu에 옮긴다음 dump를 다시 복사하면 된다.  
-파일질라에서 권한문제가 생길 수 있는데, `chown -R ubuntu /경로` 와 `chmod  -R 777 /경로`를 통해 해결한다.
+DB는 순수하게 ubuntu에서 생성할 수도 있고, 윈도우에서 원격으로 접속할 수도 있고, dump파일을 파일질라로 복사할 수도 있다. 여기선 원격 접속만 설명하겠다.  
+
+##### MySQL 원격 접속
+먼저 ubuntu에서 **mysql**에 접속해 **user**를 생성하고 권한을 부여한다.  
+```
+mysql -u root -p
+use mysql
+create user 'username'@'%' identified by 'passwd'
+```
+그리고 **mysql** cnf파일에서 접근제어를 풀어줘야 한다. cnf파일은 `/etc/mysql/my.cnf`에 있는데 나는 이 파일이 `/etc/mysql/mysql.conf.d/mysqld.cnf`을 참조하는 형태였기 때문에 후자를 수정했다.  
+```
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+![image]({{ site.baseurl }}/assets/img/pexels/sharp.jpg)  
+위 사진과 같이 `bind-address`를 주석처리한다.  
+
+그 후 3306의 접근을 열어주고,
+```
+iptables -t filter -A OUTPUT -p tcp --dport 3306 -j ACCEPT
+iptables -t filter -A INPUT -p tcp --sport 3306 -m conntrack --ctstate ESTABLISHED -j ACCEPT
+```
+
+ec2 보안그룹에서 `MYSQL/Aurora - 위치무관` 을 추가한다.  
+window cmd창을 열고 `mysql -h elastic-ip -u username -p` 비밀번호 입력 후 mysql이 뜨면 성공  
+
+
+만약 파일질라를 통해 dump파일을 옮기면 권한문제가 생길 수 있는데, `chown -R ubuntu /경로` 와 `chmod  -R 777 /경로`를 통해 해결한다.
 
 
 ### war파일 배포
