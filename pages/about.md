@@ -2,13 +2,25 @@
 layout: page
 title: About
 permalink: /about/
-feature-img: "assets/img/pexels/circuit.jpeg"
-tags: [About, Archive]
+feature-img: "assets/img/pexels/book-coffee.jpeg"
+tags: [About]
 ---
+경제학의 길을 걷다 흥미와 적성이 항상 일치하지는 않는단 사실을 깨닫고, 게임 기획자를 해보자며 컴퓨터 과목을 수강하다 웹 개발로 들어서게 되었습니다. 늦게 시작한만큼 부족한 점이 많지만 좋아하는 걸 배우면서 행복합니다.  
 
-Type on Strap is based on Type Theme, a free and open-source theme for [Jekyll](http://jekyllrb.com/), licensed under the MIT License.
+## Education
+	경북대학교 경제통상학부
+    경북대학교 컴퓨터학부 (부)
 
-Head over to the [theme's documentation](https://github.io/sylhare/Type-on-Strap) for much more information about Type on Strap or to install this theme on your own Jekyll site.
+## Experience
+	Samsung Convergence SW Course 수료
+    자바&JSP 웹프로그래밍 개발자 NCS 과정 수료
+    
+    [인터넷 쇼핑몰 제작](https://clemado1.github.io/blog/portfolio/farmparm)
+    [QnA 커뮤니티 제작](https://clemado1.github.io/blog/portfolio/qnaboard)
 
-This file is an example of a page in Jekyll, that automatically shows up in the header navigation, you can delete or modify this file freely.
- 
+## Skill
+	JAVA
+    Spring Framework
+    Javascript / JQuery
+    ...
+    C Python ...

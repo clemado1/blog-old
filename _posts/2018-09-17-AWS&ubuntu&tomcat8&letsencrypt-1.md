@@ -9,7 +9,9 @@ tags: [aws, letsencrypt]
 ![image]({{ site.baseurl }}/assets/img/pexels/completeurl.png)
   
 아마존 웹 서비스 **AWS**로 **EC2**를 발급받고 **Let's encrypt** 보안서 발급까지 마쳤다.  
-주소형식은 `https://DNS:8443/war루트`나는 SSL 인증서를 발급받고 https 연결하는 것 까지가 목표였기때문에 url에서 포트번호 8443을 지우거나 프로젝트 서브도메인을 통해 일부 경로만 보안 연결하는 시도는 하지 않았다.
+주소형식은 `https://DNS:8443/war루트`나는 SSL 인증서를 발급받고 https 연결하는 것 까지가 목표였기때문에 url에서 포트번호 8443을 지우거나 프로젝트 서브도메인을 통해 일부 경로만 보안 연결하는 시도는 하지 않았다.  
+
++)내가 뭘 더 했는지 모르겠는데 며칠 뒤 https연결에서 8443 포트 번호가 사라졌다 띠용?
 
 
 ### 요금발생
