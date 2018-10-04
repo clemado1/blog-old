@@ -58,6 +58,7 @@ keytool -importkeystore -deststorepass <비밀번호> -destkeypass <재확인> -
 keytool -import -trustcacerts -alias root -file chain.pem -keystore <jks 이름>
 ```
 따로 권한을 주기가 귀찮아서 이 jks파일을 톰캣으로 옮길 것이다.  
++) 생각해보니 이러면 보안에 문제가 있을 수도 있을 거 같다. 
 ```
 mv <jks 이름> /opt/tomcat/webapps/
 ```
