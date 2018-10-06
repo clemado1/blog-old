@@ -10,7 +10,7 @@ tags: [aws, ubuntu]
 ```
 innodb: cannot allocate memory for the buffer pool
 ```
-로그를 확인해보니 이 메세지가 떠있다. 고친다고 컨퍼런스 파일을 건드리다가 잘못 만졌는지 재시작도 안되고 재설치도 안되고.. 그냥 싹 다 날린 다음에 컴파일로 설치했다. 그리고 `/etc/my.cnf`에  
+로그를 확인해보니 이 메세지가 떠있다. 고친다고 컨피겨 파일을 건드리다가 잘못 만졌는지 재시작도 안되고 재설치도 안되고.. 그냥 싹 다 날린 다음에 컴파일로 설치했다. 그리고 `/etc/my.cnf`에  
 ```
 innodb_buffer_pool_size = 16M
 ```

@@ -8,7 +8,7 @@ tags: [Portfolio]
 
 # 프로젝트 소개
 
-![FarmParm](https://github.com/clemado1/project1/blob/master/WebContent/images/farmparm.png)
+![FarmParm]({{ site.baseurl }}/assets/img/portfolio/farmparm2.png)
 **팜팜농원**은 농작물 판매 쇼핑몰입니다. [팜팜농원 바로가기](http://java.swq.co.kr/FarmParm)
 
 
