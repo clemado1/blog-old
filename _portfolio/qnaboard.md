@@ -35,8 +35,8 @@ tags: [Portfolio]
 |--------|--------|--------|--------|--------|--------|
 | ubuntu | STS | MySQL | Java | HTML | Git |
 |Tomcat8|  |  | JSP | css | GitHub |
-||||Spring|JavaScript||
-|||||JQuery|||
+|	|	|	|Spring|JavaScript|	|
+|	|	|	|JQuery|	|	|
 
 
 
