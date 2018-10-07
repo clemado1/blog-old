@@ -2,7 +2,7 @@
 baseurl: "/blog"
 url: "https://clemado1.github.io"
 title: Belye Nochi # site's title
-description: "Read, think, write" # used by search engines
+description: "read, think, write" # used by search engines
 
 
 # THEME-SPECIFIC CONFIGURATION
