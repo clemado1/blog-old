@@ -2,7 +2,7 @@
 baseurl: "/blog"
 url: "https://clemado1.github.io"
 title: Belye Nochi # site's title
-description: "A website with blog posts and pages" # used by search engines
+description: "Read-Think-Write" # used by search engines
 
 
 # THEME-SPECIFIC CONFIGURATION
@@ -40,7 +40,7 @@ theme_settings:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter: # "twitter username"
+  twitter: "clemado1"
   vimeo:
   wordpress:
   youtube:
@@ -88,7 +88,7 @@ theme_settings:
 
   # Colours, typography and padding
   # Open the "_sass > base" folder, and open "_variables.scss"
-  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
+  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic|Noto+Serif+KR:300,300i"
 
   # Post navigation
   post_navigation: true
