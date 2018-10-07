@@ -1,7 +1,7 @@
 // Typography
 $font-family-main: 'Noto Serif KR', sans-serif;
 $font-family-headings: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-$font-size: 1.1em;
+$font-size: 1em;
 
 
 // Padding
@@ -19,7 +19,7 @@ $border-color: rgba(0, 0, 0, 0.1); // rgba recommended if using feature images
 // Typography colours
 $text-color: #383838;
 $link-color: $theme-color; // #1ABC9C;
-$selection-color: #D5D5D5; // visible when highlighting text
+$selection-color: #EAEAEA; // visible when highlighting text
 $blockquote-color: #EEF7FA; // $background-color;
 
 //Search color
@@ -53,19 +53,19 @@ $border-radius: 4px !default;
 
 // base16 Material Theme
 $base00: #F6F6F6 !default;  // Default Background
-$base01: #E7EAEC !default;  // Lighter Background (Used for status bars)
+$base01: #F6F6F6 !default;  // Lighter Background (Used for status bars)
 $base02: #CCEAE7 !default;  // Selection Background
 $base03: #8C8C8C !default;  // Comments, Invisibles, Line Highlighting
 $base04: #8796B0 !default;  // Dark Foreground (Used for status bars)
-$base05: #383838 !default;  // Default Foreground, Caret, Delimiters, Operators
+$base05: #747474 !default;  // Default Foreground, Caret, Delimiters, Operators
 $base06: #80CBC4 !default;  // Light Foreground (Not often used)
 $base07: #FFFFFF !default;  // Light Background (Not often used)
 $base08: #FF5370 !default;  // Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
 $base09: #F76D47 !default;  // Integers, Boolean, Constants, XML Attributes, Markup Link Url
 $base0a: #FFB62C !default;  // Classes, Markup Bold, Search Text Background
-$base0b: #91B859 !default;  // Strings, Inherited Class, Markup Code, Diff Inserted
-$base0c: #39ADB5 !default;  // Support, Regular Expressions, Escape Characters, Markup Quotes
-$base0d: #6182B8 !default;  // Functions, Methods, Attribute IDs, Headings
+$base0b: #2E9FFF !default;  // Strings, Inherited Class, Markup Code, Diff Inserted
+$base0c: #747474 !default;  // Support, Regular Expressions, Escape Characters, Markup Quotes
+$base0d: #F9617A !default;  // Functions, Methods, Attribute IDs, Headings
 $base0e: #7C4DFF !default;  // Keywords, Storage, Selector, Markup Italic, Diff Changed
 $base0f: #E53935 !default;  // Deprecated, Opening/Closing Embedded Language Tags e.g.
 
