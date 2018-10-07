@@ -24,8 +24,8 @@ figure.highlight {
 code.highlighter-rouge {
     padding: 0.2em 0.4em;
     font-size: $font-size-code;
-    border: 1px solid #383838;
-    color: rgb(19, 77, 119);
+    background-color: transparentize($base00, 0);
+    color: rgb(9, 117, 195);
     border-radius: 2px;
     font-family: $monospace;
 }
