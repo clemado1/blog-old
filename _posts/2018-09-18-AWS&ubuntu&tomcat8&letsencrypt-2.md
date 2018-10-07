@@ -8,7 +8,7 @@ JAVA와 톰캣8 설치는 [여기](https://devops.profitbricks.com/tutorials/how
 
 
 우선 `sudo su` root로 로그인한다. root로 로그인 하면 `sudo` 없이 명령문을 실행할 수 있다. 입력은 선택.  
-```console
+```dos
 apt-get update
 apt-get upgrade
 dpkg-reconfigure tzdata // Asia - Seoul
@@ -18,7 +18,7 @@ dpkg-reconfigure tzdata // Asia - Seoul
 
 `apt-get update`는 `install`을 하기 전마다 실행해준다.  
 
-```console
+```dos
 sudo apt-get update
 sudo apt-get install default-jdk
 ```
