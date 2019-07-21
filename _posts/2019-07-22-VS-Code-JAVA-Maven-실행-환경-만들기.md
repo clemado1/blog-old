@@ -16,25 +16,25 @@ tags: [vscode, maven, java]
   
 3. `Ctrl + Shift + X` EXTENSIONS 페이지에서 필요한 확장팩 설치  
 	- 필수 다운로드
-    	1) Java Extension Pack : 아래의 기본적인 자바 확장팩 일괄 제공
-            - Language Support for Java™ by Red Hat
-            - Debugger for Java
-            - Java Test Runner
-            - Maven Project Explorer
-            - Java Dependency Viewer
+    	1) Java Extension Pack : 아래의 기본적인 자바 확장팩 일괄 제공  
+            - Language Support for Java™ by Red Hat  
+            - Debugger for Java  
+            - Java Test Runner  
+            - Maven Project Explorer  
+            - Java Dependency Viewer  
             - Visual Studio IntelliCode  *프록시 환경에서는 다운로드 에러가 발생한다.*  
         2) Tomcat for Java
 	- 인기/추천
-        1) Java Server Pages (JSP)
-        2) Spring Boot Tools
-        3) Spring Initializr Java Support
-        4) Spring Boot Dashboard
-        5) CheckStyle
+        1) Java Server Pages (JSP)  
+        2) Spring Boot Tools  
+        3) Spring Initializr Java Support  
+        4) Spring Boot Dashboard  
+        5) CheckStyle  
   
     - 리액트를 배우고 있어서 아래도 추가함 
-        1) React Native Tools
-        2) ES7 React/Redux/GraphQL/React-Native snippets
-        3) GraphQL for VSCode
+        1) React Native Tools  
+        2) ES7 React/Redux/GraphQL/React-Native snippets  
+        3) GraphQL for VSCode  
 4. cmd를 열어 `mvn -version` 을 실행했을 때 maven 정보가 뜨지 않는다면 Maven 다운로드가 필요하다.  
 
 5. `https://maven.apache.org/download.cgi` 로 가서 Binary zip archive 다운로드 후 환경변수 세팅  
@@ -94,7 +94,8 @@ server.xml 조작이 필요하다면 추가한 tomcat을 우클릭하고 Open Se
 ### 단축키
 ---
 ###### 기본 단축키
-| 단축키 | 설명 | Eclipse
+
+| 단축키 | 설명 | Eclipse |
 |--------|--------|-------|
 | `Alt + Shift + O` | 자동 import | `Ctrl + Shift + O` |
 | `Ctrl + P` | 요소 찾기 | `Ctrl + Shift + E` |
