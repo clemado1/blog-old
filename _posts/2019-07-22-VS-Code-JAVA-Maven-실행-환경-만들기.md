@@ -1,34 +1,39 @@
+---
+layout: post
+title: VS Code JAVA Maven 실행 환경 만들기
+tags: [vscode, maven, java]
+---
 # VS Code JAVA Maven 실행 환경 만들기
 ***
 
 ### 기본 다운로드
 ---
-######jdk와 tomcat은 설치가 되어있다고 가정  
+##### jdk와 tomcat은 설치가 되어있다고 가정  
 
 1. `https://code.visualstudio.com/` 에서 VS Code 다운로드  
 2. `VSCodeUserSetup-x64-1.36.1.exe` 실행파일을 관리자 권한으로 실행 (원하는 위치에 설치하기 위해)  
-3. `ctrl+shift+x` EXTENSIONS 페이지에서 필요한 확장팩 설치
-	필수 다운로드
-    - Java Extension Pack : 아래의 기본적인 자바 확장팩 일괄 제공
-		- [x] Language Support for Java™ by Red Hat
-		- [x] Debugger for Java
-		- [x] Java Test Runner
-		- [x] Maven Project Explorer
-		- [x] Java Dependency Viewer
-		- [ ] Visual Studio IntelliCode  *프록시 환경에서는 다운로드 에러가 발생한다.*
-	- Tomcat for Java
-	___
-	인기/추천
-    - Java Server Pages (JSP)
-    - Spring Boot Tools
-    - Spring Initializr Java Support
-    - Spring Boot Dashboard
-    - CheckStyle
-    ___
-    기타 배우고 있는 기술 관련 
-    - React Native Tools
-    - ES7 React/Redux/GraphQL/React-Native snippets
-    - GraphQL for VSCode
+3. `Ctrl + Shift + X` EXTENSIONS 페이지에서 필요한 확장팩 설치
+	###### 필수 다운로드
+    1) Java Extension Pack : 아래의 기본적인 자바 확장팩 일괄 제공
+		- Language Support for Java™ by Red Hat
+		- Debugger for Java
+		- Java Test Runner
+		- Maven Project Explorer
+		- Java Dependency Viewer
+		- Visual Studio IntelliCode  *프록시 환경에서는 다운로드 에러가 발생한다.*
+	2) Tomcat for Java
+    
+	###### 인기/추천
+    1) Java Server Pages (JSP)
+    2) Spring Boot Tools
+    3) Spring Initializr Java Support
+    4) Spring Boot Dashboard
+    5) CheckStyle
+    
+    ###### 기타 배우고 있는 기술 관련 
+    1) React Native Tools
+    2) ES7 React/Redux/GraphQL/React-Native snippets
+    3) GraphQL for VSCode
 
 
 4. cmd를 열어 `mvn -version` 을 실행했을 때 maven 정보가 뜨지 않는다면 Maven 다운로드가 필요하다.
@@ -46,16 +51,17 @@ Apache Maven 3.6.1 어쩌구 저쩌구가 뜨면 성공
 
 ### Import 및 실행
 ---
-###### 기존 프로젝트를 추가하는 것으로 진행
+##### 기존 프로젝트를 추가하는 것으로 진행
 
-1. 기존 프로젝트를 찾아 EXPLORER`Ctrl+Shift+E` 에 추가한다.
-![image]({{ site.baseurl }}/assets/img/pexels/vscode1.png) ![image]({{ site.baseurl }}/assets/img/pexels/vscode2.png)
+1. 기존 프로젝트를 찾아 EXPLORER`Ctrl+Shift+E` 에 추가한다.  
+![image]({{ site.baseurl }}/assets/img/pexels/vscode1.png)  
+![image]({{ site.baseurl }}/assets/img/pexels/vscode2.png)  
 
-2. TOMCAT SERVERS에 컴퓨터에 설치되어 있는 Tomcat을 추가한다.
-![image]({{ site.baseurl }}/assets/img/pexels/vscode5.png)
+2. TOMCAT SERVERS에 컴퓨터에 설치되어 있는 Tomcat을 추가한다.  
+![image]({{ site.baseurl }}/assets/img/pexels/vscode5.png)  
 
-3. Maven Project일 경우 자동으로 MAVEN PROJECT 항목에 추가된다. 추가된 Project를 package화 한다.
-![image]({{ site.baseurl }}/assets/img/pexels/vscode4.png)
+3. Maven Project일 경우 자동으로 MAVEN PROJECT 항목에 추가된다. 추가된 Project를 package화 한다.  
+![image]({{ site.baseurl }}/assets/img/pexels/vscode4.png)  
 ```bash
 [INFO] Building war: d:\sts_workspace\spring_board\target\spring_board-1.0.0-BUILD-SNAPSHOT.war
 [INFO] WEB-INF\web.xml already added, skipping
@@ -63,7 +69,7 @@ Apache Maven 3.6.1 어쩌구 저쩌구가 뜨면 성공
 [INFO] BUILD SUCCESS
 ```
 만약 unmappable character for encoding 에러가 뜬다면 `pom.xml`에 아래 **encoding** 설정을 추가하자.  
-```html
+```
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -110,7 +116,7 @@ server.xml 조작이 필요하다면 추가한 tomcat을 우클릭하고 Open Se
 | `Ctrl + Alt + ↑` | 다중 커서 | ↓ 도 마찬가지 |  
 
 이외에도 div>span*5 와 같은 약어를 입력하면 아래와 같이 자동으로 생성된다.
-```html
+```
 	<div>
 		<span></span>
 		<span></span>
