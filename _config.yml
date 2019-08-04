@@ -1,120 +1,56 @@
-# SITE CONFIGURATION
-baseurl: "/blog"
-url: "https://clemado1.github.io"
-title: Belye Nochi # site's title
-description: "Read Think Write" #used by search engines
+title: Your awesome title
+author: GitHub User
+email: your-email@domain.com
+description: > # this means to ignore newlines until "show_exerpts:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+show_excerpts: true # set to true to show excerpts on the homepage
 
-
-# THEME-SPECIFIC CONFIGURATION
-theme_settings:
-  # Meta
-  title: Belye Nochi # blog's title
-  avatar: assets/img/triangle.svg
-  favicon: assets/7178icon.ico
-  gravatar: # Email MD5 hash
-
-  # Header and footer text
-  header_text: > #two or three lines to describe your site
-     <p>hello world</p>
-  header_text_feature_image: assets/img/pexels/triangular.jpeg
-  footer_text: >
-   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
-
-  # Icons
-  rss: true  # Make sure you created a feed.xml with feed.xml layout
-  email_address: clemado1@gmail.com # Full email address, e.g. "sam@example.com"
-  behance:
-  bitbucket:
-  dribbble:
-  facebook:
-  flickr:
-  gitlab:
-  github: "clemado1"
-  google_plus:
-  instagram:
-  keybase:
-  linkedin:  # Full URL
-  pinterest:
-  reddit:
-  soundcloud:
-  stack_exchange:  # Full URL
-  steam:
-  tumblr:
-  twitter: "clemado1"
-  vimeo:
-  wordpress:
-  youtube:
-  
-  # Sharing options
-  share_buttons:
-    facebook: true
-    twitter: true
-    google_plus: true
-    tumblr:
-    pinterest:
-    pocket:
-    reddit: true
-    linkedin:
-    wordpress:
-    email: true
-
-  # Scripts / Features 
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname: clemado1
-  katex: true # Enable if using math markup
-  
-  special_page:
-    search: 
-      icon: "search" # Assuming page link and icon are the same
-      enabled: true
-    tags:
-      icon: "tags"
-      enabled: true
-  
-  # Localization strings
-  str_follow_on: "Follow on"
-  str_rss_follow: "Follow RSS feed"
-  str_share_on: "Share on"
-  str_add_to: "Add to"
-  str_email: "Email"
-  str_tweet: "Tweet"
-  str_pin_it: "Pin it"
-  str_next_post: "Next post"
-  str_previous_post: "Previous post"
-  str_next_page: "Next"
-  str_previous_page: "Prev"
-  str_continue_reading: "Continue reading"
-  str_javascript_required_disqus: "Please enable JavaScript to view comments."
-
-  # Colours, typography and padding
-  # Open the "_sass > base" folder, and open "_variables.scss"
-  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic|Noto+Serif+KR:300,300i"
-
-  # Post navigation
-  post_navigation: true
-  
-  
-# PAGINATION
-paginate: 5
-paginate_path: "blog/page:num"
-
-
-# PORTFOLIO
-collections:
-  portfolio:
-    output: true
-    permalink: /:collection/:name
-
-
-# BUILD SETTINGS
-markdown: kramdown
-highlighter: rouge
+# Minima date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 sass:
   sass_dir: _sass
-  style: :compressed
-  plugins: [jekyll-paginate, jekyll-seo-tag]
+plainwhite:
+  name: Adam Denisov
+  tagline: Developer. Designer
+  date_format: "%b %-d, %Y"
+  sitemap: true # set to true to generate sitemap.xml content
 
-gems : 
+  # generate social links in footer
+  social_links:
+    twitter: thelehhman
+    github:  thelehhman
+    linkedIn: in/thelehhman
+    rss: rss
+    # dribbble: jekyll
+    # facebook: jekyll
+    # flickr:   jekyll
+    # instagram: jekyll
+    # linkedin: jekyll
+    # pinterest: jekyll
+    # youtube: jekyll
+    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
+    # youtube_channel_name: CloudCannon
+    # telegram: jekyll
+    # googleplus: +jekyll
+    # microdotblog: jekyll
+
+    # Mastodon instances
+    # mastodon:
+    # - username: jekyll
+    #   instance: example.com
+    # - username: jekyll2
+    #   instance: example.com
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+#header_pages:
+# - about.md
+
+# Build settings
+theme: plainwhite
+
+plugins:
   - jekyll-seo-tag
-#theme: type-on-strap # Uncomment if using the theme as a jekyll theme gem
-exclude: ["Gemfile", "Gemfile.lock", "type-on-strap.gemspec", "*.gem", "LICENSE", "README.md", "screenshot.png", "package.json", "node_modules", "gulpfile.js", ".idea/*"]
+#  - jekyll-feed
