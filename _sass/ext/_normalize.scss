@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
 //
@@ -230,8 +231,16 @@ code,
 kbd,
 pre,
 samp {
-    font-family: monospace, monospace;
+    font-family: monospace, ‘Noto Sans KR’;
     font-size: 1em;
+}
+
+code.highlighter-rouge {
+    padding: 0.2em 0.4em;
+    background-color: #fbfbfb;
+    color: rgb(38, 181, 129);
+    border-radius: 2px;
+    font-size: 0.8em;
 }
 
 // Forms
@@ -420,10 +429,11 @@ optgroup {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-	border: 1px solid black;
 }
 
-td,
-th {
-    padding: 5px;
+td,th {
+	padding: 5px 10px;
+}
+tr {
+	border-bottom: solid 1px #ddd;
 }
