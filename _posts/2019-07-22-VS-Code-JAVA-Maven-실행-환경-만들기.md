@@ -14,7 +14,7 @@ tags: [vscode, maven, java]
   
 2. `VSCodeUserSetup-x64-1.36.1.exe` 실행파일을 관리자 권한으로 실행 (원하는 위치에 설치하기 위해)  
   
-3. `Ctrl + Shift + X` EXTENSIONS 페이지에서 필요한 확장팩 설치  
+3. EXTENSIONS `Ctrl + Shift + X` 페이지에서 필요한 확장팩 설치  
 	- 필수 다운로드  
     	1) Java Extension Pack : 아래의 기본적인 자바 확장팩 일괄 제공  
             - Language Support for Java™ by Red Hat  
@@ -52,7 +52,7 @@ tags: [vscode, maven, java]
 ---
 ##### 기존 프로젝트를 추가하는 것으로 진행
 
-1. 기존 프로젝트를 찾아 EXPLORER`Ctrl+Shift+E` 에 추가한다.  
+1. 기존 프로젝트를 찾아 EXPLORER `Ctrl+Shift+E` 에 추가한다.  
   
     ![image]({{ site.baseurl }}/assets/img/pexels/vscode1.png)  
     ![image]({{ site.baseurl }}/assets/img/pexels/vscode2.png)  
@@ -115,7 +115,7 @@ tags: [vscode, maven, java]
 
 | 단축키 | 설명 | 비고 |
 |--------|--------|-------|
-| `Ctrl + \` ` | 터미널 실행 | 현재 경로를 기준 |
+| `Ctrl + ` &grave; | 터미널 실행 | 현재 경로를 기준 |
 | `Ctrl + K` | 단축키 설정 |  |
 | `Ctrl + U` | 이전 위치로 커서 이동 |  |
 | `Ctrl + Shift + F12` | 구현 미리보기 |  |
@@ -145,7 +145,7 @@ tags: [vscode, maven, java]
 ---
 1. Maven이 아닌 Dynamic Web Project는 지원이 안되는 듯 하다.  
  -- 하루종일 찾아봤는데 안된다는 글만 있는 걸로 보면 안되는 듯  
-2. war 파일을 만들어서 tomcat 서버를 구동해야한다. 파일이 수정되면 자동으로 deploy 되도록 설정할 수 있을런지 모르겠다.  
+2. war 파일을 만들어서 tomcat 서버를 구동해야한다. ~~파일이 수정되면 자동으로 deploy 되도록 설정할 수 있을런지 모르겠다.~~ -> Tomcat for Java Extension 설정으로 설정 가능하다고 한다. 단 jsp는 지원하지 않는다. [참고](https://stackoverflow.com/questions/51434930/how-to-hot-reload-tomcat-server-in-vscode/57212212#57212212)  
 3. jsp 지원이 유독 적음. JSP 내 요소들을 거의 인식하지 못하는 것 처럼 보인다.  
 
 VS Code는 이클립스, intellJ와 같은 IDE가 아니기 때문에 동일한 퍼포먼스를 기대하기에는 무리가 있다. 자바를 사용하기에 불편한 점은 분명 있지만 앞으로 프레임워크나 스크립트 언어를 사용해야하니 계속 사용할 것 같다.  
