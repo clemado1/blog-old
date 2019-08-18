@@ -12,7 +12,7 @@ tags: [vscode, maven, java]
 
 1. `https://code.visualstudio.com/` 에서 VS Code 다운로드  
   
-2. `VSCodeUserSetup-x64-1.36.1.exe` 실행파일을 관리자 권한으로 실행 (원하는 위치에 설치하기 위해)  
+2. `VSCodeUserSetup-x64-1.36.1.exe` 실행파일을 ~~관리자 권한으로 실행 (원하는 위치에 설치하기 위해)~~ 관리자 권한으로 실행할 경우 나중에 unins000.exe 에러가 5분마다 발생한다. 결국 재설치  
   
 3. EXTENSIONS `Ctrl + Shift + X` 페이지에서 필요한 확장팩 설치  
 	- 필수 다운로드  
