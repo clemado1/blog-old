@@ -11,7 +11,8 @@ javax.net.ssl.SSLHandshakeException: Remote host closed connection during handsh
 
 구글링해보니 여러가지 가능성이 있었는데 결국엔 JDK 버전 문제였다. JDK 1.6 환경인 서버에서만 위의 에러가 발생했다.  
 로컬에서 프로젝트 환경을 1.6으로 설정했었는데도 이미 설치한 JDK의 버전이 1.8이라서 에러가 나지 않았던 모양이다.  
-그래서 다시 구글링에 돌입... 
+
+[TLSConnection Factory](https://stackoverflow.com/questions/33364100/how-to-use-tls-1-2-in-java-6#answer-33495988)
 
 
 
