@@ -13,8 +13,9 @@ $leftWidth: 220px;
 }
 
 body {
-	font-family: 'Raleway', sans-serif;
-	font-size: 16px;
+	@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+	font-family: 'Noto Sans KR', 'Raleway', sans-serif;
+	font-size: 15px;
 	line-height: 1.2em;
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
