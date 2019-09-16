@@ -237,13 +237,15 @@ samp {
 
 code.highlighter-rouge {
     padding: 0.2em 0.4em;
-    background-color: #c9c7ba;
-    color: rgb(45, 107, 21);
+    background-color: #f2f7e7;
+    color: #3c9408;
     border-radius: 2px;
     font-size: 0.8em;
 }
 
 blockquote {
+    margin: 0;
+    padding-left: 15px;
     color: #666;
     border-left: 4px solid #90c35f;
 }
