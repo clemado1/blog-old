@@ -2,6 +2,7 @@
 layout: post
 title: letsencrypt 갱신 완료 기록용
 tags: [letsencrypt]
+published : false
 ---
 
 친절하게도 인증서 만료일이 다가오면 메일이 계속 온다. 그래도 3개월 동안 어찌저찌 잘 버텼다 싶다. 
