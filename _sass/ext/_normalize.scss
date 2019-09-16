@@ -237,10 +237,15 @@ samp {
 
 code.highlighter-rouge {
     padding: 0.2em 0.4em;
-    background-color: #fff9bc;
+    background-color: #c9c7ba;
     color: rgb(45, 107, 21);
     border-radius: 2px;
     font-size: 0.8em;
+}
+
+blockquote {
+    color: #666;
+    border-left: 4px solid #90c35f;
 }
 
 // Forms
