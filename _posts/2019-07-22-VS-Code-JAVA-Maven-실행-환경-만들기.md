@@ -8,7 +8,7 @@ tags: [vscode, maven, java]
 
 ### 기본 다운로드
 ---
-##### jdk와 tomcat은 설치가 되어있다고 가정  
+#### jdk와 tomcat은 설치가 되어있다고 가정  
 
 1. `https://code.visualstudio.com/` 에서 VS Code 다운로드  
   
@@ -50,7 +50,7 @@ tags: [vscode, maven, java]
 
 ### Import 및 실행
 ---
-##### 기존 프로젝트를 추가하는 것으로 진행
+#### 기존 프로젝트를 추가하는 것으로 진행
 
 1. 기존 프로젝트를 찾아 EXPLORER `Ctrl+Shift+E` 에 추가한다.  
   
@@ -99,36 +99,36 @@ tags: [vscode, maven, java]
 
 ### 단축키
 ---
-##### 기본 단축키
+#### 기본 단축키
 
-| 단축키 | 설명 | Eclipse |
-|--------|--------|-------|
-| `Alt + Shift + O` | 자동 import | `Ctrl + Shift + O` |
-| `Ctrl + P` | 요소 찾기 | `Ctrl + Shift + E` |
-| `Ctrl + Shift + P` | 명령 검색 |  |
-| `Ctrl + Shift + F` | 전체 찾기 | `Ctrl + F` |  
-| `Ctrl + Shift + K` | 한 줄 삭제 | `Ctrl + D` |  
+| 단축키                | 설명        | Eclipse            |
+| ------------------ | --------- | ------------------ |
+| `Alt + Shift + O`  | 자동 import | `Ctrl + Shift + O` |
+| `Ctrl + P`         | 요소 찾기     | `Ctrl + Shift + E` |
+| `Ctrl + Shift + P` | 명령 검색     |                    |
+| `Ctrl + Shift + F` | 전체 찾기     | `Ctrl + F`         |
+| `Ctrl + Shift + K` | 한 줄 삭제    | `Ctrl + D`         |
 
 자주 쓰는 Project Clean은 `Ctrl + Shift + P`에서 `Java: Clean the java language server workspace` 를 이용한다.
 
-##### 유용한 단축키  
+#### 유용한 단축키  
 
-| 단축키 | 설명 | 비고 |
-|--------|--------|-------|
-| `Ctrl + ` ` | 터미널 실행 | 현재 경로를 기준 |
-| `Ctrl + K` | 단축키 설정 |  |
-| `Ctrl + U` | 이전 위치로 커서 이동 |  |
-| `Ctrl + Shift + F12` | 구현 미리보기 |  |
-| `Ctrl + F12` | 구현으로 이동 |  |
-| `Shift + F12` | 모든 참조 찾기 | |
-| `F12` | 정의로 이동 | `Ctrl + 왼클릭`으로도 가능 |
-| `Alt + ←` | 이전 화면으로 이동 |  |
-| `Alt + ↑` | 위로 이동 | ↓ 는 아래로 이동 |
-| `Ctrl + Shift + O` | 소스 구성요소 보기 | |
-| `Ctrl + D` | 동일 문자열 중복 선택 | 입력 횟수만큼 증가 |
-| `Alt + Shift + 드래그` | 드래그 영역으로 선택 |  |
-| `Ctrl + Alt + ↑` | 다중 커서 | ↓ 도 마찬가지 |  
-| `Shift + Alt + ↑` | 위로 복사 | ↓ 는 아래 복사 |  
+| 단축키                  | 설명           | 비고                 |
+| -------------------- | ------------ | ------------------ |
+| `Ctrl + ` `          | 터미널 실행       | 현재 경로를 기준          |
+| `Ctrl + K`           | 단축키 설정       |                    |
+| `Ctrl + U`           | 이전 위치로 커서 이동 |                    |
+| `Ctrl + Shift + F12` | 구현 미리보기      |                    |
+| `Ctrl + F12`         | 구현으로 이동      |                    |
+| `Shift + F12`        | 모든 참조 찾기     |                    |
+| `F12`                | 정의로 이동       | `Ctrl + 왼클릭`으로도 가능 |
+| `Alt + ←`            | 이전 화면으로 이동   |                    |
+| `Alt + ↑`            | 위로 이동        | ↓ 는 아래로 이동         |
+| `Ctrl + Shift + O`   | 소스 구성요소 보기   |                    |
+| `Ctrl + D`           | 동일 문자열 중복 선택 | 입력 횟수만큼 증가         |
+| `Alt + Shift + 드래그`  | 드래그 영역으로 선택  |                    |
+| `Ctrl + Alt + ↑`     | 다중 커서        | ↓ 도 마찬가지           |
+| `Shift + Alt + ↑`    | 위로 복사        | ↓ 는 아래 복사          |
 
 이외에도 div>span*5 와 같은 약어를 입력하면 아래와 같이 자동으로 생성된다.
 ```
