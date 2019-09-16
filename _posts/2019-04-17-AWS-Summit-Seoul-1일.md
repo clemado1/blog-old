@@ -2,6 +2,7 @@
 layout: post
 title: AWS Summit Seoul 1일
 tags: [aws]
+published : false
 ---
 
 신입 개발자가 스타트업에서 AWS로 살아남는 이야기 - 사람 다 차서 못들음
