@@ -13,7 +13,8 @@ $leftWidth: 220px;
 }
 
 body {
-	font-family: 'Raleway', sans-serif;
+	@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+	font-family: 'Noto Sans KR', 'Raleway', sans-serif;
 	font-size: 16px;
 	line-height: 1.2em;
 	margin: 0;
@@ -159,7 +160,6 @@ main {
 	padding-left: 40px;
 }
 .post {
-	font-family: 'Merriweather', sans-serif;
 	font-weight: 300;
 	color: #222;
 	line-height: 1.9em;
