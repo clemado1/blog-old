@@ -10,60 +10,48 @@ tags: [window10, wsl, vscode, ubuntu]
 
 1. `Powercell`을 관리자 권한으로 실행
 2. `WSL` (Windows Subsystem for Linux) 설치
-
-```bash
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-```
-
+   ```bash
+   Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+   ```
 3. 리눅스 배포판 설치파일 다운로드
-
-- 익숙하기도 하고 18은 부담이 될까 싶어 `ubuntu 16.04` 버전으로 설치
-
-```bash
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing
-```
-
+   - 익숙하기도 하고 18은 부담이 될까 싶어 `ubuntu 16.04` 버전으로 설치
+   ```bash
+   Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing
+   ```
 4. 설치가 끝났으면 파일 실행하여 설치
-
-```
-Add-AppxPackage .\Ubuntu.appx (설치한 appx명)
-```
+   ```
+   Add-AppxPackage .\Ubuntu.appx (설치한 appx명)
+   ```
 
 ---
 
 ## Python
 
 1. `Python 3.6` 설치
-
-- Real Python 에 소개된대로 설치함 [링크](https://realpython.com/installing-python/#ubuntu)
-
-```bash
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt-get update
-sudo apt-get install python3.6
-```
-
+   - Real Python 에 소개된대로 설치함 [링크](https://realpython.com/installing-python/#ubuntu)
+   ```bash
+   sudo add-apt-repository ppa:deadsnakes/ppa
+   sudo apt-get update
+   sudo apt-get install python3.6
+   ```
 2. `Python3` 버전 선택
 
-```
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1
+   ```
+   sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1
 
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
+   sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
 
-sudo update-alternatives --config python3
-```
+   sudo update-alternatives --config python3
+   ```
 
 3. `Pip3` 설치
-
-```
-sudo apt install python3-pip
-```
-
+   ```
+   sudo apt install python3-pip
+   ```
 4. `Pipenv` 설치
-
-```
-pip3 intall --user pipenv
-```
+   ```
+   pip3 intall --user pipenv
+   ```
 
 ---
 
