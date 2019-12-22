@@ -129,6 +129,9 @@ tags: [vscode, maven, java]
 | `Alt + Shift + 드래그`  | 드래그 영역으로 선택  |                    |
 | `Ctrl + Alt + ↑`     | 다중 커서        | ↓ 도 마찬가지           |
 | `Shift + Alt + ↑`    | 위로 복사        | ↓ 는 아래 복사          |
+| `Ctrl + Alt + l`    | 동일 문자열 일괄 선택        |           |
+| `Ctrl + /`    | 주석        |           |
+| `Ctrl + Alt + /`    | 블록 주석       |           |
 
 이외에도 div>span*5 와 같은 약어를 입력하면 아래와 같이 자동으로 생성된다.
 ```
