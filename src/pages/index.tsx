@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 import { Query } from "../graphql-types";
 
 const LatestPostListQuery = graphql`
-	query LatestPostListQuery {
+	query {
 		allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
 			edges {
 				node {
