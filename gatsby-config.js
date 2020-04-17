@@ -1,8 +1,8 @@
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Default Starter`,
+		title: `belye nochi`,
 		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-		author: `@gatsbyjs`,
+		author: `@clemado1`,
 	},
 	plugins: [
 		`gatsby-plugin-typescript`,
@@ -33,8 +33,8 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `gatsby-starter-default`,
-				short_name: `starter`,
+				name: `belye nochi`,
+				short_name: `belye nochi`,
 				start_url: `/`,
 				background_color: `#663399`,
 				theme_color: `#663399`,

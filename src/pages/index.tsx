@@ -29,16 +29,16 @@ const IndexPage: React.FC = () => {
 	return (
 		<Layout>
 			<SEO title="Home" />
-			<h1>Latest Posts</h1>
+			<h2>Latest Posts</h2>
 			<ul>
 				{data.allMarkdownRemark.edges.map(({ node }) => (
 					<li key={node.id}>
-						<h2>
+						<h3>
 							<Link to={node.frontmatter.path}>
 								{node.frontmatter.title}
 							</Link>
-						</h2>
-						<h3>{node.frontmatter.date}</h3>
+						</h3>
+						<span>{node.frontmatter.date}</span>
 						<p>{node.excerpt}</p>
 						<hr />
 					</li>

@@ -14,7 +14,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
 						frontmatter {
 							title
 							path
-							date
+							date(formatString: "YYYY-MM-DD HH:mm:ss")
 						}
 					}
 				}
