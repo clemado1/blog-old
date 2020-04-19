@@ -1,6 +1,7 @@
 ---
 title: 테스트
 path: /test2
+category: Book
 date: 2020-04-15 20:51:00
 ---
 
