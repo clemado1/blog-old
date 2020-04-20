@@ -5,11 +5,13 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@graphql-codegen/plugin-helpers": "1.4.0",
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-generate-typings": "^0.9.8-r1",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-offline": "^3.1.2",
+    "gatsby-plugin-postcss": "^2.2.3",
     "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-sharp": "^2.5.3",
     "gatsby-plugin-typescript": "^2.3.1",
@@ -21,8 +23,13 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1"
   },
+  "resolutions": {
+    "gatsby-plugin-generate-typings/@graphql-codegen/core": "1.8.3",
+    "gatsby-plugin-generate-typings/@graphql-codegen/introspection": "1.8.3"
+  },
   "devDependencies": {
     "prettier": "^1.19.1",
+    "tailwindcss": "^1.2.0",
     "ts-node": "^8.8.2",
     "typescript": "^3.8.3"
   },

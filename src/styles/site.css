@@ -1,0 +1,25 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.royal-100 {
+	color: #0015ff;
+}
+
+.royal-200 {
+	color: #0013e6;
+}
+
+.royal-300 {
+	color: #000fbf;
+}
+
+.royal-400 {
+	color: #000a80;
+}
+
+.royal-500 {
+	color: #000540;
+}

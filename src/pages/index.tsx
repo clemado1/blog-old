@@ -5,9 +5,10 @@ import Layout from "../components/layout";
 import Image from "../components/image";
 import SEO from "../components/seo";
 import { Query } from "../graphql-types";
+import Categories from "../templates/Categories";
 
 const LatestPostListQuery = graphql`
-	query LatestPostListQuery {
+	query {
 		allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
 			edges {
 				node {
@@ -28,19 +29,22 @@ const IndexPage: React.FC = () => {
 	const data = useStaticQuery<Query>(LatestPostListQuery);
 	return (
 		<Layout>
-			<SEO title="Home" />
-			<h1>Latest Posts</h1>
+			<SEO title="Home" lang="" />
+			<h2 className="text-xl mb-5">Latest Posts</h2>
+			<hr />
+			<Categories />
 			<ul>
 				{data.allMarkdownRemark.edges.map(({ node }) => (
-					<li key={node.id}>
-						<h2>
-							<Link to={node.frontmatter.path}>
+					<li key={node.id} className="p-5 hover:bg-gray-100">
+						<Link to={node.frontmatter.path}>
+							<h4 className="text-lg font-bold royal-500">
 								{node.frontmatter.title}
-							</Link>
-						</h2>
-						<h3>{node.frontmatter.date}</h3>
-						<p>{node.excerpt}</p>
-						<hr />
+							</h4>
+							<h6 className="text-xs royal-400">
+								{node.frontmatter.date}
+							</h6>
+							<p className="text-base">{node.excerpt}</p>
+						</Link>
 					</li>
 				))}
 			</ul>
