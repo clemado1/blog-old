@@ -2,12 +2,6 @@ import { CreatePagesArgs } from "gatsby";
 import path from "path";
 import { Query } from "../graphql-types";
 
-const pages = [
-	{ id: 1, content: "11" },
-	{ id: 2, content: "22" },
-	{ id: 3, content: "33" },
-];
-
 export async function createPages({ actions, graphql }: CreatePagesArgs) {
 	const { createPage } = actions;
 
@@ -20,7 +14,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
 						frontmatter {
 							title
 							path
-							date
+							date(formatString: "YYYY-MM-DD HH:mm:ss")
 						}
 					}
 				}
