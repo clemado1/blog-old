@@ -19,18 +19,23 @@ const Categories: React.FC = React.memo(() => {
 		allMarkdownRemark: { totalCount, group },
 	} = useStaticQuery(DistinctCategories);
 	return (
-		<ul>
-			<li>
-				<Link to="/">All({totalCount})</Link>
-			</li>
+		<div className="ml-3 my-3">
+			<Link to="/">
+				<span className="inline-block bg-gray-200 hover:bg-gray-300 rounded-full px-3 text-xs font-semibold royal-300 mr-2">
+					All <span className="font-medium">({totalCount})</span>
+				</span>
+			</Link>
 			{group.map(category => (
-				<li className="">
-					<Link to="/">
-						{category.fieldValue}({category.totalCount})
-					</Link>
-				</li>
+				<Link to="/">
+					<span className="inline-block bg-gray-200 hover:bg-gray-300 rounded-full px-3 text-xs font-semibold royal-300 mr-2">
+						{category.fieldValue}{" "}
+						<span className="font-medium">
+							({category.totalCount})
+						</span>
+					</span>
+				</Link>
 			))}
-		</ul>
+		</div>
 	);
 });
 

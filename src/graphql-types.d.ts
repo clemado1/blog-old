@@ -689,6 +689,7 @@ export type FileFieldsEnum =
   'childMarkdownRemark___id' |
   'childMarkdownRemark___frontmatter___title' |
   'childMarkdownRemark___frontmatter___path' |
+  'childMarkdownRemark___frontmatter___category' |
   'childMarkdownRemark___frontmatter___date' |
   'childMarkdownRemark___excerpt' |
   'childMarkdownRemark___rawMarkdownBody' |
@@ -1450,6 +1451,7 @@ export type MarkdownRemarkFieldsEnum =
   'id' |
   'frontmatter___title' |
   'frontmatter___path' |
+  'frontmatter___category' |
   'frontmatter___date' |
   'excerpt' |
   'rawMarkdownBody' |
@@ -1572,6 +1574,7 @@ export type MarkdownRemarkFilterInput = {
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
+  category?: Maybe<Scalars['String']>,
   date?: Maybe<Scalars['Date']>,
 };
 
@@ -1586,6 +1589,7 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
+  category?: Maybe<StringQueryOperatorInput>,
   date?: Maybe<DateQueryOperatorInput>,
 };
 
@@ -2821,3 +2825,8 @@ export type Unnamed_1_QueryVariables = {};
 
 
 export type Unnamed_1_Query = { allMarkdownRemark: { edges: Array<{ node: (Pick<MarkdownRemark, 'excerpt' | 'id'> & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'path' | 'date'>> }) }> } };
+
+export type Unnamed_2_QueryVariables = {};
+
+
+export type Unnamed_2_Query = { allMarkdownRemark: (Pick<MarkdownRemarkConnection, 'totalCount'> & { group: Array<Pick<MarkdownRemarkGroupConnection, 'totalCount' | 'fieldValue'>> }) };
