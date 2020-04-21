@@ -30,8 +30,6 @@ const IndexPage: React.FC = () => {
 	return (
 		<Layout>
 			<SEO title="Home" lang="" />
-			<h2 className="text-xl mb-5">Latest Posts</h2>
-			<hr />
 			<Categories />
 			<ul>
 				{data.allMarkdownRemark.edges.map(({ node }) => (
