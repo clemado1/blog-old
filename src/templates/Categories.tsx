@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import { Query } from "../graphql-types";
+import { useStaticQuery, graphql } from "gatsby";
+import CategoryItem from "./CategoryItem";
 
 const DistinctCategories = graphql`
 	query {
@@ -20,20 +20,13 @@ const Categories: React.FC = React.memo(() => {
 	} = useStaticQuery(DistinctCategories);
 	return (
 		<div className="ml-3 my-3">
-			<Link to="/">
-				<span className="inline-block bg-gray-200 hover:bg-gray-300 rounded-full px-3 text-xs font-semibold royal-300 mr-2">
-					All <span className="font-medium">({totalCount})</span>
-				</span>
-			</Link>
+			<CategoryItem category="All" link="/" count={totalCount} />
 			{group.map(category => (
-				<Link to="/">
-					<span className="inline-block bg-gray-200 hover:bg-gray-300 rounded-full px-3 text-xs font-semibold royal-300 mr-2">
-						{category.fieldValue}{" "}
-						<span className="font-medium">
-							({category.totalCount})
-						</span>
-					</span>
-				</Link>
+				<CategoryItem
+					category={category.fieldValue}
+					link={`/category/${category.fieldValue}`}
+					count={category.totalCount}
+				/>
 			))}
 		</div>
 	);
