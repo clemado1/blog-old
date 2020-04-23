@@ -8,7 +8,6 @@ export type ITemplateProps<T> = ReplaceComponentRendererArgs["props"] & {
 };
 
 export interface IPostListContext {
-	title: string;
 	postPath: string;
 	category: string;
 	nodes: Array<Pick<MarkdownRemark, "frontmatter" | "excerpt" | "id">>;

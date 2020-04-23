@@ -5,8 +5,8 @@ import Layout from "../components/layout";
 import Image from "../components/image";
 import SEO from "../components/seo";
 import { Query } from "../graphql-types";
-import Categories from "../templates/Categories";
-import PostList from "../templates/PostList";
+import Categories from "../components/Categories";
+import PostList from "../components/PostList";
 
 const LatestPostListQuery = graphql`
 	query {

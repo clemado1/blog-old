@@ -1684,6 +1684,7 @@ export type Query = {
   allSiteBuildMetadata: SiteBuildMetadataConnection,
   sitePlugin?: Maybe<SitePlugin>,
   allSitePlugin: SitePluginConnection,
+  allPostsByCategory: MarkdownRemarkConnection,
 };
 
 
@@ -2824,9 +2825,9 @@ export type StringQueryOperatorInput = {
 export type Unnamed_1_QueryVariables = {};
 
 
-export type Unnamed_1_Query = { allMarkdownRemark: { edges: Array<{ node: (Pick<MarkdownRemark, 'excerpt' | 'id'> & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category' | 'path' | 'date'>> }) }> } };
+export type Unnamed_1_Query = { allMarkdownRemark: (Pick<MarkdownRemarkConnection, 'totalCount'> & { group: Array<Pick<MarkdownRemarkGroupConnection, 'totalCount' | 'fieldValue'>> }) };
 
 export type Unnamed_2_QueryVariables = {};
 
 
-export type Unnamed_2_Query = { allMarkdownRemark: (Pick<MarkdownRemarkConnection, 'totalCount'> & { group: Array<Pick<MarkdownRemarkGroupConnection, 'totalCount' | 'fieldValue'>> }) };
+export type Unnamed_2_Query = { postListByCategory: { group: Array<({ category: MarkdownRemarkGroupConnection['fieldValue'] } & { nodes: Array<(Pick<MarkdownRemark, 'id' | 'excerpt'> & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category' | 'path' | 'date'>> })> })> }, allMarkdownRemark: { nodes: Array<(Pick<MarkdownRemark, 'excerpt' | 'id'> & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category' | 'path' | 'date'>> })> } };
