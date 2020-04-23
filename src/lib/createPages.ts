@@ -70,7 +70,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
 			},
 			component: path.resolve(
 				__dirname,
-				"../templates/PostLIstTemplate.tsx",
+				"../templates/PostListTemplate.tsx",
 			),
 		});
 	});

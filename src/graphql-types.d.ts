@@ -1684,7 +1684,6 @@ export type Query = {
   allSiteBuildMetadata: SiteBuildMetadataConnection,
   sitePlugin?: Maybe<SitePlugin>,
   allSitePlugin: SitePluginConnection,
-  allPostsByCategory: MarkdownRemarkConnection,
 };
 
 
@@ -2289,11 +2288,47 @@ export type SitePageContext = {
   html?: Maybe<Scalars['String']>,
   title?: Maybe<Scalars['String']>,
   date?: Maybe<Scalars['String']>,
+  postPath?: Maybe<Scalars['String']>,
+  category?: Maybe<Scalars['String']>,
+  nodes?: Maybe<Array<Maybe<SitePageContextNodes>>>,
 };
 
 export type SitePageContextFilterInput = {
   html?: Maybe<StringQueryOperatorInput>,
   title?: Maybe<StringQueryOperatorInput>,
+  date?: Maybe<StringQueryOperatorInput>,
+  postPath?: Maybe<StringQueryOperatorInput>,
+  category?: Maybe<StringQueryOperatorInput>,
+  nodes?: Maybe<SitePageContextNodesFilterListInput>,
+};
+
+export type SitePageContextNodes = {
+  id?: Maybe<Scalars['String']>,
+  excerpt?: Maybe<Scalars['String']>,
+  frontmatter?: Maybe<SitePageContextNodesFrontmatter>,
+};
+
+export type SitePageContextNodesFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>,
+  excerpt?: Maybe<StringQueryOperatorInput>,
+  frontmatter?: Maybe<SitePageContextNodesFrontmatterFilterInput>,
+};
+
+export type SitePageContextNodesFilterListInput = {
+  elemMatch?: Maybe<SitePageContextNodesFilterInput>,
+};
+
+export type SitePageContextNodesFrontmatter = {
+  title?: Maybe<Scalars['String']>,
+  category?: Maybe<Scalars['String']>,
+  path?: Maybe<Scalars['String']>,
+  date?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextNodesFrontmatterFilterInput = {
+  title?: Maybe<StringQueryOperatorInput>,
+  category?: Maybe<StringQueryOperatorInput>,
+  path?: Maybe<StringQueryOperatorInput>,
   date?: Maybe<StringQueryOperatorInput>,
 };
 
@@ -2399,6 +2434,15 @@ export type SitePageFieldsEnum =
   'context___html' |
   'context___title' |
   'context___date' |
+  'context___postPath' |
+  'context___category' |
+  'context___nodes' |
+  'context___nodes___id' |
+  'context___nodes___excerpt' |
+  'context___nodes___frontmatter___title' |
+  'context___nodes___frontmatter___category' |
+  'context___nodes___frontmatter___path' |
+  'context___nodes___frontmatter___date' |
   'pluginCreator___id' |
   'pluginCreator___parent___id' |
   'pluginCreator___parent___parent___id' |
@@ -2830,4 +2874,4 @@ export type Unnamed_1_Query = { allMarkdownRemark: (Pick<MarkdownRemarkConnectio
 export type Unnamed_2_QueryVariables = {};
 
 
-export type Unnamed_2_Query = { postListByCategory: { group: Array<({ category: MarkdownRemarkGroupConnection['fieldValue'] } & { nodes: Array<(Pick<MarkdownRemark, 'id' | 'excerpt'> & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category' | 'path' | 'date'>> })> })> }, allMarkdownRemark: { nodes: Array<(Pick<MarkdownRemark, 'excerpt' | 'id'> & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category' | 'path' | 'date'>> })> } };
+export type Unnamed_2_Query = { allMarkdownRemark: { nodes: Array<(Pick<MarkdownRemark, 'excerpt' | 'id'> & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category' | 'path' | 'date'>> })> } };
