@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import Image from "../components/image";
-import SEO from "../components/seo";
+import SEO from "../components/Seo";
 import { Query } from "../graphql-types";
 import Categories from "../components/Categories";
 import PostList from "../components/PostList";
