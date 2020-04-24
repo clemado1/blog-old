@@ -48,3 +48,11 @@
 .royal-bg-500 {
 	background-color: #000540;
 }
+
+.royal-hv-300:hover {
+	background-color: #000fbf;
+}
+
+.royal-hv-400:hover {
+	background-color: #000a80;
+}

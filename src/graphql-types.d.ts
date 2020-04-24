@@ -2871,7 +2871,17 @@ export type Unnamed_1_QueryVariables = {};
 
 export type Unnamed_1_Query = { allMarkdownRemark: (Pick<MarkdownRemarkConnection, 'totalCount'> & { group: Array<Pick<MarkdownRemarkGroupConnection, 'totalCount' | 'fieldValue'>> }) };
 
+export type SiteTitleQueryQueryVariables = {};
+
+
+export type SiteTitleQueryQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
 export type Unnamed_2_QueryVariables = {};
 
 
-export type Unnamed_2_Query = { allMarkdownRemark: { nodes: Array<(Pick<MarkdownRemark, 'excerpt' | 'id'> & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category' | 'path' | 'date'>> })> } };
+export type Unnamed_2_Query = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
+
+export type Unnamed_3_QueryVariables = {};
+
+
+export type Unnamed_3_Query = { allMarkdownRemark: { nodes: Array<(Pick<MarkdownRemark, 'excerpt' | 'id'> & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category' | 'path' | 'date'>> })> } };

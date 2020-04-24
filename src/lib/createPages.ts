@@ -6,7 +6,7 @@ import { IPostListContext } from "../interfaces";
 export async function createPages({ actions, graphql }: CreatePagesArgs) {
 	const { createPage } = actions;
 
-	const { data, errors } = await graphql<Query>(`
+	const { data, errors } = await graphql<any>(`
 		{
 			allPostsByCategory: allMarkdownRemark(
 				sort: { order: DESC, fields: frontmatter___date }

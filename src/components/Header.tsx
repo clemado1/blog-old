@@ -2,14 +2,13 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
-const Header = ({ siteTitle }) => (
+interface IHeaderProps {
+	siteTitle: string;
+}
+
+const Header: React.FC<IHeaderProps> = ({ siteTitle }) => (
 	<header className="bg-white mb-8 shadow-md lg:pl-10 xl:pl-10">
-		<div
-			style={{
-				maxWidth: 960,
-				padding: `0.5rem 1.5rem`,
-			}}
-		>
+		<div className="py-2 px-6 max-w-5xl">
 			<h1 className="m-0">
 				<Link
 					to="/"
