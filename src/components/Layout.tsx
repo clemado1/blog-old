@@ -18,6 +18,7 @@ const Layout = ({ children }) => {
 			site {
 				siteMetadata {
 					title
+					author
 				}
 			}
 		}
@@ -34,9 +35,6 @@ const Layout = ({ children }) => {
 				}}
 			>
 				<main>{children}</main>
-				<footer>
-					<hr />
-				</footer>
 			</div>
 		</>
 	);
