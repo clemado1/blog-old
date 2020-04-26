@@ -16,10 +16,7 @@ const CategorieItem: React.FC<ICategoryItemProp> = React.memo(
 				activeClassName="royal-bg-300 royal-hv-300"
 				className="inline-block bg-gray-200 hover:bg-gray-300 rounded-full px-3 text-xs font-semibold royal-300 mr-2"
 			>
-				<span>
-					{category}
-					<span className="font-medium">({count})</span>
-				</span>
+				<span>#{category}</span>
 			</Link>
 		);
 	},

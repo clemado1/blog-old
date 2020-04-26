@@ -10,6 +10,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
 		{
 			allPostsByCategory: allMarkdownRemark(
 				sort: { order: DESC, fields: frontmatter___date }
+				filter: { frontmatter: { type: { eq: "post" } } }
 			) {
 				group(field: frontmatter___category) {
 					fieldValue

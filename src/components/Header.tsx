@@ -7,7 +7,7 @@ interface IHeaderProps {
 }
 
 const Header: React.FC<IHeaderProps> = ({ siteTitle }) => (
-	<header className="bg-white mb-8 shadow-md lg:pl-10 xl:pl-10">
+	<header className="bg-white mb-3 shadow-md lg:pl-10 xl:pl-10">
 		<div className="py-2 px-6 max-w-5xl">
 			<h1 className="m-0">
 				<Link

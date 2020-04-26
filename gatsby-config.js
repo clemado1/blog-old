@@ -2,7 +2,8 @@ module.exports = {
 	siteMetadata: {
 		title: `belye nochi`,
 		description: ``,
-		author: `@clemado1`,
+		author: `clemado1`,
+		interest: [`Web Development`, `rust`, `Web Assembly`],
 	},
 	plugins: [
 		`gatsby-plugin-typescript`,
@@ -16,8 +17,8 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				name: `images`,
-				path: `${__dirname}/src/images`,
+				name: `assets`,
+				path: `${__dirname}/assets`,
 			},
 		},
 		{
