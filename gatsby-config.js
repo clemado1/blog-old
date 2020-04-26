@@ -3,7 +3,7 @@ module.exports = {
 		title: `belye nochi`,
 		description: ``,
 		author: `clemado1`,
-		interest: [`Web Development`, `rust`, `Web Assembly`],
+		interest: [`web development`, `rust`, `wasm`, `book`],
 	},
 	plugins: [
 		`gatsby-plugin-typescript`,
