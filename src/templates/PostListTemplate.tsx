@@ -12,7 +12,6 @@ const PostListTemplate: React.FC<IPostListTemplateProps> = React.memo(props => {
 	const { category, nodes } = props.pageContext;
 	return (
 		<Layout>
-			<SEO title={category} lang="" />
 			<Profile />
 			<Categories />
 			<PostList nodes={nodes} />
