@@ -32,7 +32,6 @@ const IndexPage: React.FC = () => {
 	const { allMarkdownRemark } = useStaticQuery<Query>(LatestPostListQuery);
 	return (
 		<Layout>
-			<SEO title="Home" lang="" />
 			<Profile />
 			<Categories />
 			<PostList nodes={allMarkdownRemark.nodes} />
