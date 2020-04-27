@@ -37,6 +37,13 @@ const Profile: React.FC = React.memo(() => {
 					alt="profile"
 				/>
 			</div>
+			<div className="text-center md:text-left">
+				<h2 className="text-lg text-gray-800 font-semibold">
+					{site.siteMetadata.author}
+				</h2>
+				<div className="royal-300 text-sm font-medium">Developer</div>
+				<div className="text-gray-700 text-xs">이것 저것 함</div>
+			</div>
 		</div>
 	);
 });
