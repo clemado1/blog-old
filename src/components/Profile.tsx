@@ -11,7 +11,7 @@ const profileImgQuery = graphql`
 				interest
 			}
 		}
-		file(relativePath: { eq: "clemado1.jpg" }) {
+		file(relativePath: { eq: "clemado1.png" }) {
 			childImageSharp {
 				fixed(width: 100, height: 100) {
 					base64
@@ -46,7 +46,7 @@ const Profile: React.FC = React.memo(() => {
 				<div className="text-gray-700 text-xs leading-snug">
 					Interested in
 					{site.siteMetadata.interest.map(item => (
-						<span className="inline-block bg-gray-200 rounded-sm px-1 text-xs font-medium text-gray-700 ml-2">
+						<span className="inline-block bg-gray-200 rounded-sm px-1 mb-1 text-xs text-gray-700 ml-2">
 							{item}
 						</span>
 					))}
