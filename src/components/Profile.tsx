@@ -27,16 +27,9 @@ const profileImgQuery = graphql`
 
 const Profile: React.FC = React.memo(() => {
 	const { site, file } = useStaticQuery(profileImgQuery);
-	console.log(site.siteMetadata.interest);
+
 	return (
 		<div className="md:flex rounded-lg p-6">
-			<div className="md:w-24 mx-auto md:mx-0 md:mr-6 text-center">
-				<Image
-					className="rounded-full "
-					fixed={file.childImageSharp.fixed}
-					alt="profile"
-				/>
-			</div>
 			<div className="text-center md:text-left">
 				<h2 className="text-lg text-gray-800 font-semibold">
 					{site.siteMetadata.author}

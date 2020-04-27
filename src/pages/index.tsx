@@ -33,6 +33,7 @@ const IndexPage: React.FC = () => {
 	return (
 		<Layout>
 			<SEO title="Home" lang="" />
+			<Profile />
 			<Categories />
 			<PostList nodes={allMarkdownRemark.nodes} />
 		</Layout>
