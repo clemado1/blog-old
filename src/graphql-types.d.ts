@@ -2137,6 +2137,7 @@ export type SiteFieldsEnum =
   'siteMetadata___title' |
   'siteMetadata___description' |
   'siteMetadata___author' |
+  'siteMetadata___interest' |
   'port' |
   'host' |
   'polyfill' |
@@ -2844,12 +2845,14 @@ export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>,
   description?: Maybe<Scalars['String']>,
   author?: Maybe<Scalars['String']>,
+  interest?: Maybe<Array<Maybe<Scalars['String']>>>,
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<StringQueryOperatorInput>,
   author?: Maybe<StringQueryOperatorInput>,
+  interest?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSortInput = {
@@ -2883,7 +2886,7 @@ export type SiteTitleQueryQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteS
 export type Unnamed_2_QueryVariables = {};
 
 
-export type Unnamed_2_Query = { file: Maybe<{ childImageSharp: Maybe<{ fixed: Maybe<Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>> }> }> };
+export type Unnamed_2_Query = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'author' | 'interest'>> }>, file: Maybe<{ childImageSharp: Maybe<{ fixed: Maybe<Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>> }> }> };
 
 export type Unnamed_3_QueryVariables = {};
 
