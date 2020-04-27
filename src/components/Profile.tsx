@@ -30,20 +30,12 @@ const Profile: React.FC = React.memo(() => {
 
 	return (
 		<div className="md:flex rounded-lg p-6">
-			<div className="text-center md:text-left">
-				<h2 className="text-lg text-gray-800 font-semibold">
-					{site.siteMetadata.author}
-				</h2>
-				<div className="royal-300 text-sm font-medium">Developer</div>
-				<div className="text-gray-700 text-xs">이것 저것 함</div>
-				<div className="text-gray-700 text-xs leading-snug">
-					Interested in
-					{site.siteMetadata.interest.map(item => (
-						<span className="inline-block bg-gray-200 rounded-sm px-1 mb-1 text-xs text-gray-700 ml-2">
-							{item}
-						</span>
-					))}
-				</div>
+			<div className="md:w-24 mx-auto md:mx-0 md:mr-6 text-center">
+				<Image
+					className="rounded-full "
+					fixed={file.childImageSharp.fixed}
+					alt="profile"
+				/>
 			</div>
 		</div>
 	);
