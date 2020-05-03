@@ -14,7 +14,7 @@ const CategorieItem: React.FC<ICategoryItemProp> = React.memo(
 				to={link}
 				activeStyle={{ color: "white" }}
 				activeClassName="royal-bg-300 royal-hv-300"
-				className="inline-block bg-gray-200 hover:bg-gray-300 rounded-full px-3 py-1 text-xs font-semibold royal-300 mr-2"
+				className="inline-block bg-gray-200 hover:bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold royal-300 mr-2"
 			>
 				<span>#{category}</span>
 			</Link>

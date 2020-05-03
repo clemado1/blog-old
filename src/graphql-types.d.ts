@@ -2489,6 +2489,12 @@ export type SitePageFieldsEnum =
   'pluginCreator___resolve' |
   'pluginCreator___name' |
   'pluginCreator___version' |
+  'pluginCreator___pluginOptions___plugins' |
+  'pluginCreator___pluginOptions___plugins___resolve' |
+  'pluginCreator___pluginOptions___plugins___id' |
+  'pluginCreator___pluginOptions___plugins___name' |
+  'pluginCreator___pluginOptions___plugins___version' |
+  'pluginCreator___pluginOptions___plugins___pluginFilepath' |
   'pluginCreator___pluginOptions___dest' |
   'pluginCreator___pluginOptions___name' |
   'pluginCreator___pluginOptions___path' |
@@ -2498,6 +2504,12 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___theme_color' |
   'pluginCreator___pluginOptions___display' |
   'pluginCreator___pluginOptions___icon' |
+  'pluginCreator___pluginOptions___classPrefix' |
+  'pluginCreator___pluginOptions___showLineNumbers' |
+  'pluginCreator___pluginOptions___noInlineHighlight' |
+  'pluginCreator___pluginOptions___prompt___user' |
+  'pluginCreator___pluginOptions___prompt___host' |
+  'pluginCreator___pluginOptions___prompt___global' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -2686,6 +2698,15 @@ export type SitePluginFieldsEnum =
   'resolve' |
   'name' |
   'version' |
+  'pluginOptions___plugins' |
+  'pluginOptions___plugins___resolve' |
+  'pluginOptions___plugins___id' |
+  'pluginOptions___plugins___name' |
+  'pluginOptions___plugins___version' |
+  'pluginOptions___plugins___pluginOptions___classPrefix' |
+  'pluginOptions___plugins___pluginOptions___showLineNumbers' |
+  'pluginOptions___plugins___pluginOptions___noInlineHighlight' |
+  'pluginOptions___plugins___pluginFilepath' |
   'pluginOptions___dest' |
   'pluginOptions___name' |
   'pluginOptions___path' |
@@ -2695,6 +2716,12 @@ export type SitePluginFieldsEnum =
   'pluginOptions___theme_color' |
   'pluginOptions___display' |
   'pluginOptions___icon' |
+  'pluginOptions___classPrefix' |
+  'pluginOptions___showLineNumbers' |
+  'pluginOptions___noInlineHighlight' |
+  'pluginOptions___prompt___user' |
+  'pluginOptions___prompt___host' |
+  'pluginOptions___prompt___global' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -2811,6 +2838,7 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 };
 
 export type SitePluginPluginOptions = {
+  plugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPlugins>>>,
   dest?: Maybe<Scalars['String']>,
   name?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
@@ -2820,10 +2848,15 @@ export type SitePluginPluginOptions = {
   theme_color?: Maybe<Scalars['String']>,
   display?: Maybe<Scalars['String']>,
   icon?: Maybe<Scalars['String']>,
+  classPrefix?: Maybe<Scalars['String']>,
+  showLineNumbers?: Maybe<Scalars['Boolean']>,
+  noInlineHighlight?: Maybe<Scalars['Boolean']>,
+  prompt?: Maybe<SitePluginPluginOptionsPrompt>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  plugins?: Maybe<SitePluginPluginOptionsPluginsFilterListInput>,
   dest?: Maybe<StringQueryOperatorInput>,
   name?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
@@ -2833,7 +2866,71 @@ export type SitePluginPluginOptionsFilterInput = {
   theme_color?: Maybe<StringQueryOperatorInput>,
   display?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
+  classPrefix?: Maybe<StringQueryOperatorInput>,
+  showLineNumbers?: Maybe<BooleanQueryOperatorInput>,
+  noInlineHighlight?: Maybe<BooleanQueryOperatorInput>,
+  prompt?: Maybe<SitePluginPluginOptionsPromptFilterInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsPlugins = {
+  resolve?: Maybe<Scalars['String']>,
+  id?: Maybe<Scalars['String']>,
+  name?: Maybe<Scalars['String']>,
+  version?: Maybe<Scalars['String']>,
+  pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptions>,
+  pluginFilepath?: Maybe<Scalars['String']>,
+};
+
+export type SitePluginPluginOptionsPluginsFilterInput = {
+  resolve?: Maybe<StringQueryOperatorInput>,
+  id?: Maybe<StringQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
+  version?: Maybe<StringQueryOperatorInput>,
+  pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsFilterInput>,
+  pluginFilepath?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsPluginsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsPluginsFilterInput>,
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptions = {
+  classPrefix?: Maybe<Scalars['String']>,
+  showLineNumbers?: Maybe<Scalars['Boolean']>,
+  noInlineHighlight?: Maybe<Scalars['Boolean']>,
+  prompt?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsPrompt>,
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
+  classPrefix?: Maybe<StringQueryOperatorInput>,
+  showLineNumbers?: Maybe<BooleanQueryOperatorInput>,
+  noInlineHighlight?: Maybe<BooleanQueryOperatorInput>,
+  prompt?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsPromptFilterInput>,
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsPrompt = {
+  user?: Maybe<Scalars['String']>,
+  host?: Maybe<Scalars['String']>,
+  global?: Maybe<Scalars['Boolean']>,
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsPromptFilterInput = {
+  user?: Maybe<StringQueryOperatorInput>,
+  host?: Maybe<StringQueryOperatorInput>,
+  global?: Maybe<BooleanQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsPrompt = {
+  user?: Maybe<Scalars['String']>,
+  host?: Maybe<Scalars['String']>,
+  global?: Maybe<Scalars['Boolean']>,
+};
+
+export type SitePluginPluginOptionsPromptFilterInput = {
+  user?: Maybe<StringQueryOperatorInput>,
+  host?: Maybe<StringQueryOperatorInput>,
+  global?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginSortInput = {
@@ -2896,4 +2993,9 @@ export type Unnamed_3_Query = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteM
 export type Unnamed_4_QueryVariables = {};
 
 
-export type Unnamed_4_Query = { allMarkdownRemark: { nodes: Array<(Pick<MarkdownRemark, 'excerpt' | 'id'> & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category' | 'path' | 'date'>> })> } };
+export type Unnamed_4_Query = { allMarkdownRemark: { edges: Array<{ node: (Pick<MarkdownRemark, 'html'> & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'path' | 'date'>> }) }> } };
+
+export type Unnamed_5_QueryVariables = {};
+
+
+export type Unnamed_5_Query = { allMarkdownRemark: { nodes: Array<(Pick<MarkdownRemark, 'excerpt' | 'id'> & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category' | 'path' | 'date'>> })> } };
