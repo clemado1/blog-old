@@ -9,15 +9,15 @@ const PostLIst: React.FC<IPostListProps> = React.memo(({ nodes }) => {
 		<ul>
 			{nodes.map(
 				({ id, excerpt, frontmatter: { title, path, date } }) => (
-					<li key={id} className="p-5 hover:bg-gray-100">
-						<Link to={path}>
-							<h4 className="text-lg font-bold royal-500">
+					<Link to={path}>
+						<li key={id} className="p-5 hover:bg-gray-100">
+							<div className="text-lg font-bold royal-500">
 								{title}
-							</h4>
-							<h6 className="text-xs royal-400">{date}</h6>
-							<p className="text-base">{excerpt}</p>
-						</Link>
-					</li>
+							</div>
+							<div className="text-sm royal-400">{date}</div>
+							<p className="text-base pt-2">{excerpt}</p>
+						</li>
+					</Link>
 				),
 			)}
 		</ul>

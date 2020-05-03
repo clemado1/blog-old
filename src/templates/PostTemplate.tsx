@@ -13,8 +13,8 @@ const PostTemplate: React.FC<IPostTemplateProps> = React.memo(props => {
 	const { title, date, html } = props.pageContext;
 	return (
 		<Layout>
-			<h2 className="text-2xl font-bold text-gray-900 mb-2">{title}</h2>
-			<h4 className="text-sm mb-2">{date}</h4>
+			<p className="text-2xl font-bold text-gray-900 mb-2">{title}</p>
+			<p className="text-sm mb-2 royal-400">{date}</p>
 			<hr />
 			<div className="pb-20" dangerouslySetInnerHTML={{ __html: html }} />
 			<Utterances repo="clemado1/blog" />
