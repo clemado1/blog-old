@@ -1,5 +1,5 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import Image from "gatsby-image";
 
 const profileImgQuery = graphql`
@@ -38,11 +38,13 @@ const Profile: React.FC = React.memo(() => {
 				/>
 			</div>
 			<div className="text-center md:text-left">
-				<h2 className="text-lg text-gray-800 font-semibold">
-					{site.siteMetadata.author}
-				</h2>
-				<div className="royal-300 text-sm font-medium">Developer</div>
-				<div className="text-gray-700 text-xs">이것 저것 함</div>
+				<Link to="/about">
+					<div className="text-lg text-gray-800 font-semibold">
+						{site.siteMetadata.author}
+					</div>
+				</Link>
+				<div className="royal-300 text-base font-medium">Developer</div>
+				<div className="text-gray-700 text-sm">이것 저것 함</div>
 			</div>
 		</div>
 	);
