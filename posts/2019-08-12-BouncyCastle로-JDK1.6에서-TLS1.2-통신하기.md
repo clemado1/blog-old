@@ -8,7 +8,7 @@ date: 2019-07-22
 
 얼마 전 타사의 REST API를 이용하는 서비스 개발 요청을 받았는데 신나게 개발하고 서버에 적용했더니 이상한 에러가 발생했다.
 
-```java
+```
 javax.net.ssl.SSLHandshakeException: Remote host closed connection during handshake
 ```
 
