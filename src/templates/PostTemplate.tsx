@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../components/Layout";
 import { ITemplateProps } from "../interfaces";
 import Utterances from "../components/Utterances";
-import "./markdown.css";
 
 type IPostTemplateProps = ITemplateProps<{
 	html: string;
