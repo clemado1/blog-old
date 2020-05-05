@@ -243,14 +243,14 @@
 
 .markdown-body ol {
 	list-style: decimal;
-	padding-left: 0;
+	padding-left: 0em;
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
 .markdown-body ul {
 	list-style: disc;
-	padding-left: 0;
+	padding-left: 0em;
 	margin-top: 0;
 	margin-bottom: 0;
 }
@@ -695,11 +695,6 @@
 	color: #6a737d;
 }
 
-.markdown-body ol,
-.markdown-body ul {
-	padding-left: 0em;
-}
-
 .markdown-body ol ol,
 .markdown-body ol ul,
 .markdown-body ul ol,
@@ -962,13 +957,17 @@ pre[class*="language-"] {
 	font-weight: 500;
 }
 
-.token.operator,
+.token.operator {
+	color: #1a202c;
+}
+
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string,
 .token.variable {
 	color: #f27983;
+	font-weight: 500;
 }
 
 .token.atrule,

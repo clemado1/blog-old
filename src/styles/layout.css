@@ -233,6 +233,7 @@ hgroup {
 ul {
 	list-style-position: outside;
 	list-style-image: none;
+	margin-left: 1.45rem;
 }
 ol {
 	margin-left: 1.45rem;
