@@ -24,7 +24,7 @@ Exception in thread "main" java.lang.IllegalArgumentException: TLSv1.2
 JDK1.6 버전에서는 TLSv1.2를 사용할 수 없다고 한다. JDK1.8 은 자동으로 TLS1.2를 사용하기 때문에 JDK1.8이 설치된 서버에서 실행시키면 에러가 뜨지 않는다.  
 곧 대체할 예정인 낡은 서버라서 함부로 JDK를 업그레이드할 수도 없었다. JDK1.6에서 TLS1.2를 사용할 수 있는 방법이 없을까 구글링하다가 간단한 방법을 찾았다.
 
-> [TLSConnection Factory](https://stackoverflow.com/questions/33364100/how-to-use-tls-1-2-in-java-6#answer-33495988)
+-   [TLSConnection Factory](https://stackoverflow.com/questions/33364100/how-to-use-tls-1-2-in-java-6#answer-33495988)
 
 소스는 매우 복잡하지만 그대로 가져다쓰면 되기 때문에 간단하다.  
 자바 암호화 라이브러리인 `BouncyCastle`을 이용해서 `SSLSocketFactory`를 만들고 `HttpsURLConnection`의 `SSLSocketFactory`로 설정해주는 것이다.
@@ -67,7 +67,7 @@ JDK1.6 버전에서는 TLSv1.2를 사용할 수 없다고 한다. JDK1.8 은 자
 			in.close();
 
 		}catch(Exception e) {
-			LogError.LogErrorMsg("getRemoteJsonData ERROR", Util.getPrintStackTrace(e));
+			e.printStackTrace();
 		}finally{
 			closeConnection();
 		}
