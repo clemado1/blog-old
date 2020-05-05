@@ -690,8 +690,8 @@ export type FileFieldsEnum =
   'childMarkdownRemark___frontmatter___title' |
   'childMarkdownRemark___frontmatter___path' |
   'childMarkdownRemark___frontmatter___type' |
-  'childMarkdownRemark___frontmatter___category' |
   'childMarkdownRemark___frontmatter___date' |
+  'childMarkdownRemark___frontmatter___category' |
   'childMarkdownRemark___excerpt' |
   'childMarkdownRemark___rawMarkdownBody' |
   'childMarkdownRemark___fileAbsolutePath' |
@@ -1453,8 +1453,8 @@ export type MarkdownRemarkFieldsEnum =
   'frontmatter___title' |
   'frontmatter___path' |
   'frontmatter___type' |
-  'frontmatter___category' |
   'frontmatter___date' |
+  'frontmatter___category' |
   'excerpt' |
   'rawMarkdownBody' |
   'fileAbsolutePath' |
@@ -1577,8 +1577,8 @@ export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
   type?: Maybe<Scalars['String']>,
-  category?: Maybe<Scalars['String']>,
   date?: Maybe<Scalars['Date']>,
+  category?: Maybe<Scalars['String']>,
 };
 
 
@@ -1593,8 +1593,8 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
   type?: Maybe<StringQueryOperatorInput>,
-  category?: Maybe<StringQueryOperatorInput>,
   date?: Maybe<DateQueryOperatorInput>,
+  category?: Maybe<StringQueryOperatorInput>,
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -1680,10 +1680,10 @@ export type Query = {
   allSitePage: SitePageConnection,
   site?: Maybe<Site>,
   allSite: SiteConnection,
-  markdownRemark?: Maybe<MarkdownRemark>,
-  allMarkdownRemark: MarkdownRemarkConnection,
   imageSharp?: Maybe<ImageSharp>,
   allImageSharp: ImageSharpConnection,
+  markdownRemark?: Maybe<MarkdownRemark>,
+  allMarkdownRemark: MarkdownRemarkConnection,
   siteBuildMetadata?: Maybe<SiteBuildMetadata>,
   allSiteBuildMetadata: SiteBuildMetadataConnection,
   sitePlugin?: Maybe<SitePlugin>,
@@ -1840,6 +1840,28 @@ export type QueryAllSiteArgs = {
 };
 
 
+export type QueryImageSharpArgs = {
+  fixed?: Maybe<ImageSharpFixedFilterInput>,
+  resolutions?: Maybe<ImageSharpResolutionsFilterInput>,
+  fluid?: Maybe<ImageSharpFluidFilterInput>,
+  sizes?: Maybe<ImageSharpSizesFilterInput>,
+  original?: Maybe<ImageSharpOriginalFilterInput>,
+  resize?: Maybe<ImageSharpResizeFilterInput>,
+  id?: Maybe<StringQueryOperatorInput>,
+  parent?: Maybe<NodeFilterInput>,
+  children?: Maybe<NodeFilterListInput>,
+  internal?: Maybe<InternalFilterInput>
+};
+
+
+export type QueryAllImageSharpArgs = {
+  filter?: Maybe<ImageSharpFilterInput>,
+  sort?: Maybe<ImageSharpSortInput>,
+  skip?: Maybe<Scalars['Int']>,
+  limit?: Maybe<Scalars['Int']>
+};
+
+
 export type QueryMarkdownRemarkArgs = {
   id?: Maybe<StringQueryOperatorInput>,
   frontmatter?: Maybe<MarkdownRemarkFrontmatterFilterInput>,
@@ -1862,28 +1884,6 @@ export type QueryMarkdownRemarkArgs = {
 export type QueryAllMarkdownRemarkArgs = {
   filter?: Maybe<MarkdownRemarkFilterInput>,
   sort?: Maybe<MarkdownRemarkSortInput>,
-  skip?: Maybe<Scalars['Int']>,
-  limit?: Maybe<Scalars['Int']>
-};
-
-
-export type QueryImageSharpArgs = {
-  fixed?: Maybe<ImageSharpFixedFilterInput>,
-  resolutions?: Maybe<ImageSharpResolutionsFilterInput>,
-  fluid?: Maybe<ImageSharpFluidFilterInput>,
-  sizes?: Maybe<ImageSharpSizesFilterInput>,
-  original?: Maybe<ImageSharpOriginalFilterInput>,
-  resize?: Maybe<ImageSharpResizeFilterInput>,
-  id?: Maybe<StringQueryOperatorInput>,
-  parent?: Maybe<NodeFilterInput>,
-  children?: Maybe<NodeFilterListInput>,
-  internal?: Maybe<InternalFilterInput>
-};
-
-
-export type QueryAllImageSharpArgs = {
-  filter?: Maybe<ImageSharpFilterInput>,
-  sort?: Maybe<ImageSharpSortInput>,
   skip?: Maybe<Scalars['Int']>,
   limit?: Maybe<Scalars['Int']>
 };
@@ -2494,6 +2494,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___plugins___id' |
   'pluginCreator___pluginOptions___plugins___name' |
   'pluginCreator___pluginOptions___plugins___version' |
+  'pluginCreator___pluginOptions___plugins___browserAPIs' |
   'pluginCreator___pluginOptions___plugins___pluginFilepath' |
   'pluginCreator___pluginOptions___dest' |
   'pluginCreator___pluginOptions___name' |
@@ -2504,6 +2505,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___theme_color' |
   'pluginCreator___pluginOptions___display' |
   'pluginCreator___pluginOptions___icon' |
+  'pluginCreator___pluginOptions___maxWidth' |
   'pluginCreator___pluginOptions___classPrefix' |
   'pluginCreator___pluginOptions___showLineNumbers' |
   'pluginCreator___pluginOptions___noInlineHighlight' |
@@ -2703,9 +2705,11 @@ export type SitePluginFieldsEnum =
   'pluginOptions___plugins___id' |
   'pluginOptions___plugins___name' |
   'pluginOptions___plugins___version' |
+  'pluginOptions___plugins___pluginOptions___maxWidth' |
   'pluginOptions___plugins___pluginOptions___classPrefix' |
   'pluginOptions___plugins___pluginOptions___showLineNumbers' |
   'pluginOptions___plugins___pluginOptions___noInlineHighlight' |
+  'pluginOptions___plugins___browserAPIs' |
   'pluginOptions___plugins___pluginFilepath' |
   'pluginOptions___dest' |
   'pluginOptions___name' |
@@ -2716,6 +2720,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___theme_color' |
   'pluginOptions___display' |
   'pluginOptions___icon' |
+  'pluginOptions___maxWidth' |
   'pluginOptions___classPrefix' |
   'pluginOptions___showLineNumbers' |
   'pluginOptions___noInlineHighlight' |
@@ -2848,6 +2853,7 @@ export type SitePluginPluginOptions = {
   theme_color?: Maybe<Scalars['String']>,
   display?: Maybe<Scalars['String']>,
   icon?: Maybe<Scalars['String']>,
+  maxWidth?: Maybe<Scalars['Int']>,
   classPrefix?: Maybe<Scalars['String']>,
   showLineNumbers?: Maybe<Scalars['Boolean']>,
   noInlineHighlight?: Maybe<Scalars['Boolean']>,
@@ -2866,6 +2872,7 @@ export type SitePluginPluginOptionsFilterInput = {
   theme_color?: Maybe<StringQueryOperatorInput>,
   display?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
+  maxWidth?: Maybe<IntQueryOperatorInput>,
   classPrefix?: Maybe<StringQueryOperatorInput>,
   showLineNumbers?: Maybe<BooleanQueryOperatorInput>,
   noInlineHighlight?: Maybe<BooleanQueryOperatorInput>,
@@ -2879,6 +2886,7 @@ export type SitePluginPluginOptionsPlugins = {
   name?: Maybe<Scalars['String']>,
   version?: Maybe<Scalars['String']>,
   pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptions>,
+  browserAPIs?: Maybe<Array<Maybe<Scalars['String']>>>,
   pluginFilepath?: Maybe<Scalars['String']>,
 };
 
@@ -2888,6 +2896,7 @@ export type SitePluginPluginOptionsPluginsFilterInput = {
   name?: Maybe<StringQueryOperatorInput>,
   version?: Maybe<StringQueryOperatorInput>,
   pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsFilterInput>,
+  browserAPIs?: Maybe<StringQueryOperatorInput>,
   pluginFilepath?: Maybe<StringQueryOperatorInput>,
 };
 
@@ -2896,6 +2905,7 @@ export type SitePluginPluginOptionsPluginsFilterListInput = {
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptions = {
+  maxWidth?: Maybe<Scalars['Int']>,
   classPrefix?: Maybe<Scalars['String']>,
   showLineNumbers?: Maybe<Scalars['Boolean']>,
   noInlineHighlight?: Maybe<Scalars['Boolean']>,
@@ -2903,6 +2913,7 @@ export type SitePluginPluginOptionsPluginsPluginOptions = {
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
+  maxWidth?: Maybe<IntQueryOperatorInput>,
   classPrefix?: Maybe<StringQueryOperatorInput>,
   showLineNumbers?: Maybe<BooleanQueryOperatorInput>,
   noInlineHighlight?: Maybe<BooleanQueryOperatorInput>,

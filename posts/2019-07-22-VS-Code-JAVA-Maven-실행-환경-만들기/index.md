@@ -61,16 +61,16 @@ date: 2019-07-22
 
 1. 기존 프로젝트를 찾아 EXPLORER `Ctrl+Shift+E` 에 추가한다.
 
-    ![image]({{ site.baseurl }}/assets/img/pexels/vscode1.png)  
-    ![image]({{ site.baseurl }}/assets/img/pexels/vscode2.png)
+    ![image](vscode1.png)  
+    ![image](vscode2.png)
 
 2. TOMCAT SERVERS에 컴퓨터에 설치되어 있는 Tomcat을 추가한다.
 
-    ![image]({{ site.baseurl }}/assets/img/pexels/vscode5.png)
+    ![image](vscode5.png)
 
 3. Maven Project일 경우 자동으로 MAVEN PROJECT 항목에 추가된다. 추가된 Project를 package화 한다.
 
-    ![image]({{ site.baseurl }}/assets/img/pexels/vscode4.png)
+    ![image](vscode4.png)
 
     ```bash
     [INFO] Building war: d:\sts_workspace\spring_board\target\spring_board-1.0.0-BUILD-SNAPSHOT.war
@@ -96,12 +96,12 @@ date: 2019-07-22
 
 4. 위에서 생성된 `*.war` 파일을 우클릭하고 `Run on Tomcat Server` 클릭
 
-    ![image]({{ site.baseurl }}/assets/img/pexels/vscode6.png)  
+    ![image](vscode6.png)  
     server.xml 조작이 필요하다면 추가한 tomcat을 우클릭하고 Open Server Configuration 을 클릭
 
 5. 정상적으로 실행되는 것을 확인할 수 있다.
 
-    ![image]({{ site.baseurl }}/assets/img/pexels/vscode7.png)
+    ![image](vscode7.png)
 
 ### 단축키
 
@@ -109,48 +109,48 @@ date: 2019-07-22
 
 #### 기본 단축키
 
-| 단축키                | 설명        | Eclipse            |
-| ------------------ | --------- | ------------------ |
+| 단축키             | 설명        | Eclipse            |
+| ------------------ | ----------- | ------------------ |
 | `Alt + Shift + O`  | 자동 import | `Ctrl + Shift + O` |
-| `Ctrl + P`         | 요소 찾기     | `Ctrl + Shift + E` |
-| `Ctrl + Shift + P` | 명령 검색     |                    |
-| `Ctrl + Shift + F` | 전체 찾기     | `Ctrl + F`         |
-| `Ctrl + Shift + K` | 한 줄 삭제    | `Ctrl + D`         |
+| `Ctrl + P`         | 요소 찾기   | `Ctrl + Shift + E` |
+| `Ctrl + Shift + P` | 명령 검색   |                    |
+| `Ctrl + Shift + F` | 전체 찾기   | `Ctrl + F`         |
+| `Ctrl + Shift + K` | 한 줄 삭제  | `Ctrl + D`         |
 
 자주 쓰는 Project Clean은 `Ctrl + Shift + P`에서 `Java: Clean the java language server workspace` 를 이용한다.
 
 #### 유용한 단축키
 
-| 단축키                  | 설명           | 비고                 |
-| -------------------- | ------------ | ------------------ |
-| `Ctrl +` `           | 터미널 실행       | 현재 경로를 기준          |
-| `Ctrl + K`           | 단축키 설정       |                    |
-| `Ctrl + U`           | 이전 위치로 커서 이동 |                    |
-| `Ctrl + Shift + F12` | 구현 미리보기      |                    |
-| `Ctrl + F12`         | 구현으로 이동      |                    |
-| `Shift + F12`        | 모든 참조 찾기     |                    |
-| `F12`                | 정의로 이동       | `Ctrl + 왼클릭`으로도 가능 |
-| `Alt + ←`            | 이전 화면으로 이동   |                    |
-| `Alt + ↑`            | 위로 이동        | ↓ 는 아래로 이동         |
-| `Ctrl + Shift + O`   | 소스 구성요소 보기   |                    |
-| `Ctrl + D`           | 동일 문자열 중복 선택 | 입력 횟수만큼 증가         |
-| `Alt + Shift + 드래그`  | 드래그 영역으로 선택  |                    |
-| `Ctrl + Alt + ↑`     | 다중 커서        | ↓ 도 마찬가지           |
-| `Shift + Alt + ↑`    | 위로 복사        | ↓ 는 아래 복사          |
-| `Ctrl + Alt + l`     | 동일 문자열 일괄 선택 |                    |
-| `Ctrl + /`           | 주석           |                    |
-| `Ctrl + Alt + /`     | 블록 주석        |                    |
+| 단축키                                      | 설명                  | 비고                       |
+| ------------------------------------------- | --------------------- | -------------------------- |
+| `Ctrl +` ` | 터미널 실행 | 현재 경로를 기준 |
+| `Ctrl + K`                                  | 단축키 설정           |                            |
+| `Ctrl + U`                                  | 이전 위치로 커서 이동 |                            |
+| `Ctrl + Shift + F12`                        | 구현 미리보기         |                            |
+| `Ctrl + F12`                                | 구현으로 이동         |                            |
+| `Shift + F12`                               | 모든 참조 찾기        |                            |
+| `F12`                                       | 정의로 이동           | `Ctrl + 왼클릭`으로도 가능 |
+| `Alt + ←`                                   | 이전 화면으로 이동    |                            |
+| `Alt + ↑`                                   | 위로 이동             | ↓ 는 아래로 이동           |
+| `Ctrl + Shift + O`                          | 소스 구성요소 보기    |                            |
+| `Ctrl + D`                                  | 동일 문자열 중복 선택 | 입력 횟수만큼 증가         |
+| `Alt + Shift + 드래그`                      | 드래그 영역으로 선택  |                            |
+| `Ctrl + Alt + ↑`                            | 다중 커서             | ↓ 도 마찬가지              |
+| `Shift + Alt + ↑`                           | 위로 복사             | ↓ 는 아래 복사             |
+| `Ctrl + Alt + l`                            | 동일 문자열 일괄 선택 |                            |
+| `Ctrl + /`                                  | 주석                  |                            |
+| `Ctrl + Alt + /`                            | 블록 주석             |                            |
 
 이외에도 div>span\*5 와 같은 약어를 입력하면 아래와 같이 자동으로 생성된다.
 
-```
-	<div>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-	</div>
+```html
+<div>
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+</div>
 ```
 
 ### 사용 후기

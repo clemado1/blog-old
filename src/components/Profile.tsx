@@ -27,6 +27,7 @@ const profileImgQuery = graphql`
 
 const Profile: React.FC = React.memo(() => {
 	const { site, file } = useStaticQuery(profileImgQuery);
+	const interests = site.siteMetadata.interest;
 
 	return (
 		<div className="md:flex rounded-lg p-6">
@@ -44,7 +45,13 @@ const Profile: React.FC = React.memo(() => {
 					</div>
 				</Link>
 				<div className="royal-300 text-base font-medium">Developer</div>
-				<div className="text-gray-700 text-sm">이것 저것 함</div>
+				<div className="text-gray-700 text-sm">
+					이것 저것 함<br />
+					Interested in{" "}
+					{interests.map(item => (
+						<span className="pr-1 underline">{item}</span>
+					))}
+				</div>
 			</div>
 		</div>
 	);

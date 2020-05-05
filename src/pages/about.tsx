@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
+import SEO from "../components/Seo";
 import { useStaticQuery, graphql } from "gatsby";
 import { Query } from "../graphql-types";
 
@@ -27,6 +28,7 @@ const IndexPage: React.FC = () => {
 
 	return (
 		<Layout>
+			<SEO title="About" lang="" />
 			<div
 				className="pb-20"
 				dangerouslySetInnerHTML={{ __html: about.html }}
