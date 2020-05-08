@@ -1,6 +1,6 @@
 ---
-title: "AWS&ubuntu&tomcat8&letsencrypt 연습 3"
-path: /2018-09-17-AWS&ubuntu&tomcat8&letsencrypt-연습-3
+title: "AWS EC2 배포 연습 기록 3"
+path: /2018-09-17-AWS-EC2-배포-연습-기록-3
 type: post
 category: Dev
 date: 2018-09-19
