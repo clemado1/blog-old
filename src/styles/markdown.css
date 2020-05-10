@@ -855,7 +855,7 @@ code[class*="language-"],
 pre[class*="language-"] {
 	color: #2d3748;
 	background: none;
-	font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+	font-family: Hack;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -914,8 +914,7 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	white-space: normal;
-	padding: 0 0.5em;
+	padding: 0 0.1em;
 	font-weight: 500;
 	color: #000fbf;
 }
@@ -954,7 +953,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #99bf4d;
+	color: #64ac0c;
 	font-weight: 500;
 }
 
