@@ -70,53 +70,68 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 
 ### 로그인
 
-`Client`를 이용하여 사이트에 로그인 요청을 보낸 다음 쿠키를 저장한다.
+`Client`를 이용하여 사이트에 로그인 요청을 보낸다. 해당 페이지가 어떤 방식으로 로그인 정보를 전달하느냐에 따라 방식이 나뉜다. 여기에서는 GET 방식을 사용했다.
 
 ```Rust
-extern crate hyper;
-extern crate hyper_tls;
-
-use hyper::{self, Client, Method, Request};
-use hyper::header::{self, SET_COOKIE};
+// mybook.rs
+use hyper::header::SET_COOKIE;
+use hyper::{self, client, Client, Method, Request};
 use hyper_tls::HttpsConnector;
 
 use dotenv::dotenv;
+
+pub async fn login(
+    client: Client<HttpsConnector<client::HttpConnector>>,
+) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    dotenv().ok();
+
+    let login_url = std::env::var("LOGIN_URL").expect("URL must be set");
+    let login_id = std::env::var("LOGIN_ID").expect("ID must be set");
+    let login_pw = std::env::var("LOGIN_PW").expect("PW must be set");
+
+    let form_url = format!(
+        r#"{}?id={}&password={}"#,
+        login_url, login_id, login_pw
+    );
+
+    let uri = form_url.as_str().parse()?;
+
+    let resp = client.get(uri).await?;
+
+    println!("Response: {}", resp.status());
+
+    let cookie = resp
+        .headers()
+        .get(SET_COOKIE)
+        .and_then(|val| val.to_str().ok());
+
+    match cookie {
+        Some(my_cookie) => println!("my cookie: {}", my_cookie.to_string()),
+        None => {
+            panic!("로그인 실패");
+        }
+    }
+
+    Ok(())
+}
+```
+
+```Rust
+// main.rs
+
+extern crate hyper;
+extern crate hyper_tls;
+
+use hyper::Client;
+use hyper_tls::HttpsConnector;
+
+mod mybook;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let https = HttpsConnector::new();
     let client = Client::builder().build::<_, hyper::Body>(https);
-
-    dotenv().ok();
-
-    let req_url = std::env::var("URL").expect("URL must be set");
-    let req_id = std::env::var("ID").expect("ID must be set");
-    let req_pw = std::env::var("PW").expect("PW must be set");
-
-    let login_json = format!(r#"{{"username": "{}", "password": "{}", "returnUrl": ""}}"#, req_id, req_pw);
-
-    let request = Request::builder()
-        .method(Method::POST)
-        .uri(req_url)
-        .header("content-type", "application/json")
-        .header("X-Requested-With", "XMLHttpRequest")
-        .body(Body::from(
-            login_json
-        ))?;
-
-    let response = client.request(request).await?;
-
-    println!("Response: {}", resp.status());
-
-    let cookie = response
-    .headers()
-    .get(SET_COOKIE)
-    .and_then(|val| val.to_str().ok());
-
-    match cookie {
-        Some(my_cookie) => Ok(my_cookie.to_string()),
-        None => {panic!("로그인 실패");},
-    }
+    mybook::login(client).await?;
 
     Ok(())
 }

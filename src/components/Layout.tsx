@@ -26,6 +26,11 @@ const Layout = ({ children }) => {
 
 	return (
 		<>
+			<meta
+				name="robots"
+				content="noindex,nofollow"
+				charSet="UTF-8"
+			></meta>
 			<Header siteTitle={data.site.siteMetadata.title} />
 			<div
 				style={{
