@@ -158,7 +158,7 @@ pub async fn login(
 }
 ```
 
-반환한 `cookie` 값을 다음 페이지 호출에 사용한다. 
+반환한 `cookie` 값을 다음 페이지 호출에 지정하여 세션을 유지한다. `Request`의 헤더에 매개 변수로 받은 `cookie` 문자열을 저장한다.
 
 ```Rust
 // main.rs
@@ -180,8 +180,8 @@ pub async fn get_mybook(
     let mut request: Request<hyper::Body> = Request::default();
     request
         .headers_mut()
-        .append(COOKIE, HeaderValue::from_str(cookie.as_str()).unwrap());
-    *request.uri_mut() = mybook_url.as_str().parse().unwrap();
+        .append(COOKIE, HeaderValue::from_str(cookie.as_str()).unwrap());   // request header value 지정
+    *request.uri_mut() = mybook_url.as_str().parse().unwrap();              // request uri 지정
 
     let resp = client.request(request).await?;
 
