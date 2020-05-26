@@ -16,7 +16,7 @@ date: 2020-05-13
 
 ### Dependencies
 
-`Cargo.toml` `dependencies`에 아래 라이브러리를 추가한다.
+`Cargo.toml`-`[dependencies]`에 아래 라이브러리를 추가한다.
 
 ```toml
 dotenv = "0.14.1"
@@ -142,7 +142,7 @@ use hyper::http::HeaderValue;
 pub async fn login(
     client: &Client<HttpsConnector<client::HttpConnector>>,
 ) -> Result<String, Box<dyn std::error::Error + Send + Sync>> {
-    
+
     // 생략
 
     let resp = client.get(uri).await?;
@@ -158,7 +158,8 @@ pub async fn login(
 }
 ```
 
-반환한 `cookie` 값을 다음 페이지 호출에 지정하여 세션을 유지한다. `Request`의 헤더에 매개 변수로 받은 `cookie` 문자열을 저장한다.
+반환한 `cookie` 값을 다음 페이지 호출에 지정하여 세션을 유지해야 한다.  
+`Request`의 헤더에 매개 변수로 받은 `cookie` 문자열을 저장하고, 조회할 페이지를 요청하면 정상적으로 응답이 되는 것을 알 수 있다.
 
 ```Rust
 // main.rs
@@ -187,10 +188,14 @@ pub async fn get_mybook(
 
     let body_bytes = body::to_bytes(resp.into_body()).await?;
     let body = String::from_utf8(body_bytes.to_vec()).expect("response was not valid utf-8");
-    
+
     println!("Body: {}", body);
 
 
     Ok(())
 }
 ```
+
+### select
+
+결과로 받은 `Response body`는 다른 라이브러리를 사용하지 않고도 충분히 가공할 수 있지만 좀 더 빠르게 하기 위해 [select](https://docs.rs/select/0.4.3/select/)를 이용한다. `Html` 형식을 갖춘 문자열에서 원하는 데이터만 추출할 수 있는 크롤링용 라이브러리다.
