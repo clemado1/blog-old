@@ -173,7 +173,7 @@ pub async fn login(
 pub async fn get_mybook(
     client: &Client<HttpsConnector<client::HttpConnector>>,
     cookie: String,
-) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+) -> Result<String, Box<dyn std::error::Error + Send + Sync>> {
     dotenv().ok();
 
     let mybook_url = std::env::var("MYBOOK_URL").expect("URL must be set");
@@ -192,10 +192,40 @@ pub async fn get_mybook(
     println!("Body: {}", body);
 
 
-    Ok(())
+    Ok(body)
 }
 ```
 
 ### select
 
 결과로 받은 `Response body`는 다른 라이브러리를 사용하지 않고도 충분히 가공할 수 있지만 좀 더 빠르게 하기 위해 [select](https://docs.rs/select/0.4.3/select/)를 이용한다. `Html` 형식을 갖춘 문자열에서 원하는 데이터만 추출할 수 있는 크롤링용 라이브러리다.
+
+`Cargo.toml` 에 `select` 라이브러리를 추가한 다음, 아래와 같이 사용한다.
+
+```toml
+[dependencies]
+select = "0.4.3"
+
+```
+
+```Rust
+use select::document::Document;
+use select::predicate::{Class, Name};
+
+pub fn search_mybook(
+    client: &Client<HttpsConnector<client::HttpConnector>>,
+    cookie: String,
+    html: String
+) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    let document = Document::from(html.as_str());
+    let form = document.find(Name("form")).next().unwrap();
+
+    for node in form.find(Class("myBook")) {
+        let title = node.find(Name("a")).next().unwrap().text();
+        let link = node.find(Name("a")).next().unwrap().attr("href").unwrap();
+
+        /// link Request
+    }
+}
+
+```
