@@ -202,7 +202,7 @@ pub async fn get_mybook(
 
 `Cargo.toml` 에 `select` 라이브러리를 추가한 다음, 아래와 같이 사용한다.
 
-```toml
+```
 [dependencies]
 select = "0.4.3"
 
