@@ -198,8 +198,9 @@ pub async fn get_mybook(
 
 ### select
 
-결과로 받은 `Response body`는 다른 라이브러리를 사용하지 않고도 충분히 가공할 수 있지만 좀 더 빠르게 하기 위해 [select](https://docs.rs/select/0.4.3/select/)를 이용한다. `Html` 형식을 갖춘 문자열에서 원하는 데이터만 추출할 수 있는 크롤링용 라이브러리다.
+> `Html` 형식을 갖춘 문자열에서 원하는 데이터만 추출할 수 있는 크롤링용 라이브러리
 
+결과로 받은 `Response body`는 다른 라이브러리를 사용하지 않고도 충분히 가공할 수 있지만 좀 더 빠르게 하기 위해 [select](https://docs.rs/select/0.4.3/select/)를 이용한다.
 `Cargo.toml` 에 `select` 라이브러리를 추가한 다음, 아래와 같이 사용한다.
 
 ```
