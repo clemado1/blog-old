@@ -20,7 +20,7 @@ reqwest = { version = "0.10.4", features = ["json","cookies"] }
 
 ### Client
 
-`reqwest`로 `Client`를 생성하는 방법은 아래와 같다. `reqwest`를 사용하면 `pub fn cookie_store(self, enable: bool)`를 추가하는 것만으로 간단하게 세션을 유지할 수 있다.
+`reqwest`로 `Client`를 생성하는 방법은 아래와 같다. `reqwest`를 사용하면 `pub fn cookie_store(self, enable: bool)`를 설정하는 것만으로 간단하게 세션을 유지할 수 있다.
 
 ```Rust
 let client: reqwest::Client = reqwest::Client::builder()
@@ -30,7 +30,7 @@ let client: reqwest::Client = reqwest::Client::builder()
 
 ### 로그인
 
-쿠키를 따로 가공할 필요 없이 로그인만 수행한다.
+`client`를 생성할 때 쿠키를 저장하는 설정을 추가했으므로 따로 쿠키를 저장할 필요가 없다. 응답 코드가 적절하게 떨어졌다면 바로 리턴한다.
 
 ```Rust
 pub async fn login(
@@ -61,7 +61,7 @@ pub async fn login(
 }
 ```
 
-만약 `json` 데이터를 `post` 방식으로 보내야한다면 아래와 같이 처리할 수 있다.
+위에서는 URI로 바로 로그인했는데, 만약 `json` 데이터를 `post` 방식으로 보내야한다면 아래와 같이 처리할 수 있다.
 
 ```Rust
    let response = client
