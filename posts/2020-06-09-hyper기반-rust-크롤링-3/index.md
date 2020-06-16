@@ -78,3 +78,35 @@ pub async fn login(
 mybook::login(&client);
 
 ```
+
+이후로는 동일하게 `GET` 혹은 `POST` 요청을 보내면서 내용을 읽어오면 된다.
+
+```Rust
+pub async fn get_mybook(
+    client: &reqwest::Client,
+) -> Result<String, Box<dyn std::error::Error + Send + Sync>> {
+    dotenv().ok();
+
+    let mybook_url = std::env::var("MYBOOK_URL").expect("URL must be set");
+
+    let response = client
+        .get(mybook_url.as_str())
+        .header(CONTENT_TYPE, "text/html")
+        .send()
+        .await?;
+
+    let html = response.text_with_charset("utf-8").await?;
+
+    let document = Document::from(html.as_str());
+    let form = document.find(Name("form")).next().unwrap();
+
+    for node in form.find(Class("myBook")) {
+        let title = node.find(Name("a")).next().unwrap().text();
+        let link = node.find(Name("a")).next().unwrap().attr("href").unwrap();
+
+        /// link Request
+    }
+}
+
+
+```
