@@ -79,7 +79,8 @@ mybook::login(&client);
 
 ```
 
-이후로는 동일하게 `GET` 혹은 `POST` 요청을 보내면서 내용을 읽어오면 된다.
+이후로는 동일하게 `GET` 혹은 `POST` 요청을 보내면서 내용을 읽어오면 된다.  
+아래는 보관함에 있는 책의 링크를 순환하면서 재고가 있다면 로그를 찍어주는 예제를 구현하였다.
 
 ```Rust
 pub async fn get_mybook(
@@ -104,7 +105,20 @@ pub async fn get_mybook(
         let title = node.find(Name("a")).next().unwrap().text();
         let link = node.find(Name("a")).next().unwrap().attr("href").unwrap();
 
-        /// link Request
+        let book_response = client
+            .get(link)
+            .header(CONTENT_TYPE, "text/html")
+            .send()
+            .await?;
+
+        let title = node.find(Attr("id", "title")).next().unwrap().text();
+        let stock = node.find(Attr("id", "stock")).next().unwrap().text();
+
+        let stock_num: u32 = stock.parse().unwrap();
+
+        if stock_num > 0 {
+            println!("{} has {} stock!", title, stock);
+        }
     }
 }
 

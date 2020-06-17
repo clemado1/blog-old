@@ -219,7 +219,7 @@ pub fn search_mybook(
     html: String
 ) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let document = Document::from(html.as_str());
-    let form = document.find(Name("form")).next().unwrap();
+    let form = document.find(Name("form")).next().unwrap(); // 순환을 하지 않고 가장 첫 번째 값을 가져온다.
 
     for node in form.find(Class("myBook")) {
         let title = node.find(Name("a")).next().unwrap().text();
