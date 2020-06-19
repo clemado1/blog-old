@@ -907,16 +907,16 @@ pre[class*="language-"] {
 	overflow: auto;
 }
 
-:not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	background: #f5f5f5;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: 0 0.1em;
+	padding: 0;
 	font-weight: 500;
-	color: #000fbf;
+	color: #072de8;
+	background: #f4f7fd;
 }
 
 .token.comment,
@@ -939,7 +939,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #6b46c1;
+	color: #bd14a8;
 }
 
 .token.boolean,
@@ -953,7 +953,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #64ac0c;
+	color: #9008d6;
 	font-weight: 500;
 }
 
@@ -973,8 +973,8 @@ pre[class*="language-"] {
 .token.atrule,
 .token.attr-value,
 .token.function {
-	color: #0013e6;
-	font-weight: 500;
+	color: #1220b7;
+	font-weight: bold;
 }
 
 .token.keyword {
