@@ -106,8 +106,7 @@ pub async fn login(
 }
 ```
 
-여기서 `format!` 매크로 안에 `r#""`를 사용했다. r#은 [Raw string literals](https://doc.rust-lang.org/reference/tokens.html#raw-string-literals)을 의미하며, `"'\` 등의 문자를 백슬래쉬 없이 그대로 사용할 수 있다.  
-실제로는 URI가 복잡해서 `r#`을 사용했지만 Escape할 문자가 없다면 당연히 사용할 필요 없다.
+여기서 `format!` 매크로 안에 `r#""#`를 사용했다. `r#""#`은 [Raw string literals](https://doc.rust-lang.org/reference/tokens.html#raw-string-literals)를 위한 문자 조합으로, `"'\` 등의 문자를 백슬래쉬 없이 그대로 사용할 수 있다. 실제로는 URI가 복잡해서 `r#`을 사용했지만 Escape할 문자가 없거나 적다면 사용할 필요 없다.
 
 ```Rust
 // main.rs
