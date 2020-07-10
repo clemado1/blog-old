@@ -27,7 +27,7 @@ https://developers.google.com/speed/pagespeed/insights/?hl=ko&url={url}
 
 회사에서 사용하는 `WSL2 Ubuntu16.04`에서 설치를 진행했다.
 
-> 공식 설치 가이드 https://developers.google.com/speed/webp/docs/compiling#building
+> [공식 설치 가이드](https://developers.google.com/speed/webp/docs/compiling#building)
 
 ##### 패키지
 
@@ -52,7 +52,7 @@ echo $LD_LIBRARY_PATH
 echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib" >> ~/.bashrc
 ```
 
-#### 설치 확인
+##### 설치 확인
 
 ```bash
  clemado1@PC  cwebp
@@ -66,7 +66,7 @@ Typical value is around 80.
 Try -longhelp for an exhaustive list of advanced options.
 ```
 
-### Webp 사용
+### Webp 실행
 
 ```bash
 cwebp -q 80 bg_main_01.jpg -o test.webp
@@ -76,22 +76,24 @@ cwebp -q 80 bg_main_01.jpg -o test.webp
 `jpg` 포맷의 이미지를 `-q` 압축 계수 80으로 지정하고 실행했을 때 1.06MB -> 174KB 의 결과를 얻었다.  
 압축 계수를 낮게 지정할 수록 파일 크기는 줄어드나 품질도 낮아진다.
 
-[Webp 옵션](https://developers.google.com/speed/webp/docs/cwebp)
+> [Webp 옵션 상세](https://developers.google.com/speed/webp/docs/cwebp)
 
-### `.webp` 적용
+### Webp 이미지 사용
 
 다른 이미지와 동일하게 `<img>` 태그로도 가능하지만, 일부 브라우저 혹은 ios 유저에게는 보이지 않는 경우가 발생한다.
 
 ```html
-<img src="/test.webp" alt="WebP Test" />
+<img src="/test.webp" alt="Webp Test" />
 ```
 
-`webp` 를 지원하지 않는 접근일 때에는 원래 이미지를 보여주기 위해 `<picture>` 태그를 활용한다.
+`webp` 를 지원하지 않는 접근일 때에는 원래 이미지를 보여주기 위해 `<picture>` 태그를 활용할 수 있다.  
+`<picture>` 는 다중 이미지 리소스를 위한 태그로, 브라우저는 `<source>`를 순차 조회하며 현재 뷰포트에 알맞는 리소스를 선택한다.  
+마지막에는 `<img>` 태그를 작성한다. 익스플로러 등 `<picture>` 태그를 지원하지 않는 브라우저거나, 알맞는 리소스가 없을 경우 사용된다.
 
 ```html
 <picture>
 	<source srcset="test.webp" type="image/webp" />
 	<source srcset="bg_main_01.jpg" type="image/jpeg" />
-	<img src="bg_main_01.jpg" alt="WebP Test" />
+	<img src="bg_main_01.jpg" alt="Webp Test" />
 </picture>
 ```
