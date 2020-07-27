@@ -38,7 +38,8 @@ sudo apt-get install libjpeg-dev libpng-dev libtiff-dev libgif-dev
 ##### 빌드
 
 ```bash
-cd libwebp-1.1.0
+wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-{version}.tar.gz
+cd libwebp-{version}
 ./configure
 make
 sudo make install
