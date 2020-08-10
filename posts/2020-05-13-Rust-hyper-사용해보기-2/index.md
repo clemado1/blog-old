@@ -1,6 +1,6 @@
 ---
-title: hyper 기반 rust 크롤링 2
-path: /2020-05-13-hyper기반-rust-크롤링-2
+title: Rust hyper 사용해보기 2
+path: /2020-05-13-Rust-hyper-사용해보기-2
 type: post
 category: Dev
 date: 2020-05-13

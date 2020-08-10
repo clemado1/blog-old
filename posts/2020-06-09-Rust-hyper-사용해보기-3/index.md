@@ -1,6 +1,6 @@
 ---
-title: hyper 기반 rust 크롤링 3
-path: /2020-06-09-hyper기반-rust-크롤링-3
+title: Rust hyper 사용해보기 3
+path: /2020-06-09-Rust-hyper-사용해보기-3
 type: post
 category: Dev
 date: 2020-06-09
@@ -111,12 +111,14 @@ pub async fn get_mybook(
             .send()
             .await?;
 
-        let title = node.find(Attr("id", "title")).next().unwrap().text();
-        let stock = node.find(Attr("id", "stock")).next().unwrap().text();
+        let stock = node.find(Attr("id", "stock"))
+            .next()
+            .unwrap()
+            .text()
+            .parse()
+            .unwrap();
 
-        let stock_num: u32 = stock.parse().unwrap();
-
-        if stock_num > 0 {
+        if stock > 0 {
             println!("{} has {} stock!", title, stock);
         }
     }
