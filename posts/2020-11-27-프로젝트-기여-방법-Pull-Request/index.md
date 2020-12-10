@@ -116,7 +116,7 @@ date: 2020-11-27
 -   충돌로 인해 Merge pull request가 활성화되어 있지 않은 상황
     ![image](https://user-images.githubusercontent.com/41099541/100559537-5f785f80-32f6-11eb-9885-38b357e966dd.png)
 
-1.  reset
+1.  reset  
     `commit` 내용이 복잡하지 않아서 `commit`을 취소하고 다시 진행하려면 `reset` 명령어만으로 간단하게 해결할 수 있다. 이 때 `--soft` 옵션은 현재 로컬 파일의 변경 사항을 `staged`로 유지하고, `--hard` 옵션은 변경한 내용까지 모두 초기화한다. 기본 옵션은 `--mixed`로, 현재 로컬 파일의 변경 사항을 유지하지만 `unstaged`로 격하한다.
 
     ```bash
@@ -130,7 +130,7 @@ date: 2020-11-27
     $ git push -f origin clemado1/study
     ```
 
-2.  rebase
+2.  rebase  
     `rebase`는 `git`에서 다소 복잡하고 어려운 문법으로, 여기에서는 PR 충돌을 해결하는 분량으로만 기술한다.
 
     ```bash
