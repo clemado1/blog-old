@@ -1,58 +1,44 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
 
 .royal-100 {
 	color: #0015ff;
 }
-
 .royal-200 {
 	color: #0013e6;
 }
-
 .royal-300 {
 	color: #000fbf;
 }
-
 .royal-400 {
 	color: #000a80;
 }
-
 .royal-500 {
 	color: #000540;
 }
-
 .royal-bg-100 {
 	background-color: #0015ff;
 }
-
 .royal-bg-200 {
 	background-color: #0013e6;
 }
-
 .royal-bg-300 {
 	background-color: #000fbf;
 }
-
 .royal-bd-300 {
 	border: 1px solid;
 	border-color: #000fbf;
 }
-
 .royal-bg-400 {
 	background-color: #000a80;
 }
-
 .royal-bg-500 {
 	background-color: #000540;
 }
-
 .royal-hv-300:hover {
 	background-color: #000fbf;
 }
-
 .royal-hv-400:hover {
 	background-color: #000a80;
 }
