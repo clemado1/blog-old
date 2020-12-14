@@ -91,13 +91,6 @@ img {
 svg:not(:root) {
 	overflow: hidden;
 }
-code,
-kbd,
-pre,
-samp {
-	font-family: monospace, monospace;
-	font-size: 1em;
-}
 figure {
 	margin: 1em 40px;
 }
@@ -211,24 +204,6 @@ body {
 }
 img {
 	max-width: 100%;
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	margin-bottom: 1.45rem;
-}
-hgroup {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	margin-bottom: 1.45rem;
 }
 ul {
 	list-style-position: outside;
@@ -246,122 +221,26 @@ ol {
 	list-style-position: outside;
 	list-style-image: none;
 }
-dl {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	margin-bottom: 1.45rem;
-}
-dd {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	margin-bottom: 1.45rem;
-}
-p {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	margin-bottom: 1.45rem;
-}
-figure {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	margin-bottom: 1.45rem;
-}
-pre {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	margin-bottom: 1.45rem;
-	font-size: 0.85rem;
-	line-height: 1.42;
-	background: hsla(0, 0%, 0%, 0.04);
-	border-radius: 3px;
-	overflow: auto;
-	word-wrap: normal;
-	padding: 1.45rem;
+p,
+dd,
+dl,
+img,
+form,
+table,
+hgroup,
+iframe,
+figure,
+address,
+noscript,
+fieldset {
+	padding: 0;
+	margin: 0 0 1.45rem 0;
 }
 table {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	margin-bottom: 1.45rem;
 	font-size: 1rem;
 	line-height: 1.45rem;
 	border-collapse: collapse;
 	width: 100%;
-}
-fieldset {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	margin-bottom: 1.45rem;
-}
-blockquote {
-	margin-left: 1.45rem;
-	margin-right: 1.45rem;
-	margin-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	margin-bottom: 1.45rem;
-}
-form {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	margin-bottom: 1.45rem;
-}
-noscript {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	margin-bottom: 1.45rem;
-}
-iframe {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	margin-bottom: 1.45rem;
 }
 hr {
 	margin-left: 0;
@@ -375,16 +254,6 @@ hr {
 	background: hsla(0, 0%, 0%, 0.2);
 	border: none;
 	height: 1px;
-}
-address {
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	margin-bottom: 1.45rem;
 }
 b {
 	font-weight: bold;
@@ -426,18 +295,6 @@ p *:last-child {
 li > p {
 	margin-bottom: calc(1.45rem / 2);
 }
-code {
-	font-size: 0.85rem;
-	line-height: 1.45rem;
-}
-kbd {
-	font-size: 0.85rem;
-	line-height: 1.45rem;
-}
-samp {
-	font-size: 0.85rem;
-	line-height: 1.45rem;
-}
 abbr {
 	border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
 	cursor: help;
@@ -475,8 +332,7 @@ th:last-child,
 td:last-child {
 	padding-right: 0;
 }
-tt,
-code {
+tt {
 	background-color: hsla(0, 0%, 0%, 0.04);
 	border-radius: 3px;
 	font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
@@ -484,23 +340,6 @@ code {
 	padding: 0;
 	padding-top: 0.2em;
 	padding-bottom: 0.2em;
-}
-pre code {
-	background: none;
-	line-height: 1.42;
-}
-code:before,
-code:after,
-tt:before,
-tt:after {
-	letter-spacing: -0.2em;
-	content: " ";
-}
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
-	content: "";
 }
 @media only screen and (max-width: 480px) {
 	html {
