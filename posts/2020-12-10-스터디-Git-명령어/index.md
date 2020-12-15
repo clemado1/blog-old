@@ -43,8 +43,7 @@ DVCS의 사용자는 단순히 파일의 마지막 스냅샷을 Checkout하는 �
 
 ### 명령어
 
--   `init` : `init` 명령어는 프로젝트에 Git 저장소를 생성한다. 이 저장소는 `.git` 디렉토리로 생성되고 내부 구조는 아래와 같다.
-
+-   `init` : `init` 명령어는 프로젝트에 Git 저장소를 생성한다. 이 저장소는 `.git` 이름을 가진 하위 디렉토리로 되어있다. 내부 구조는 아래와 같다.
 ```bash
 $ ls -F1
 config
@@ -55,9 +54,32 @@ info/ # 버전 관리 제외 대상
 objects/ # 데이터베이스
 refs/ # 브랜치, 태그, 리모트 등을 저장
 ```
-
--   `clone` : 원격 저장소에 있는 프로젝트를 로컬로 가져올 때 사용한다. `git clone {remote}`를 실행하면
--   `add` :
--   `commit` :
--   `push` :
--   `pull` :
+-   `clone` : 원격 저장소에 있는 프로젝트를 로컬로 가져올 때 사용한다. 명령어를 실행하면 원격 저장소의 프로젝트를 로컬에 복제하는데, 먼저 디렉토리를 만들고 `git init`으로 Git 저장소를 생성한다음 입력한 원격 저장소를 `origin`이라는 이름으로 추가하고 `fetch` 후 `checkout` 한다.
+    ```bash
+    $ git clone {remote}
+    ```
+-   `add` : `Working Directory`에 있는 수정한 파일(`Modified` 상태)을 `Staging Area`에 추가하는 명령어. `add`를 통해 Stage한 파일만 `commit`이 가능하다. 주의할 점은 `add` 또한 파일을 단위로 하는 것이 아니라 그 순간을 기록하는 것이므로 `add` 후에 파일을 또 수정한다면 다시 `add`를 사용해주어야 한다. 
+    ```bash
+    # 파일의 상태 확인
+    $ git status
+    $ git add {filepath}
+    # 전체 추가
+    $ git add .
+    ```
+-   `commit` : 현재 `Staging Area`에 있는 파일을 모두 커밋한다. 커밋을 하면 데이터베이스에 스냅샷으로 기록하고 현재 브랜치가 새로운 커밋을 가리키도록 한다.
+    ```bash
+    # 기본 편집기를 통해 커밋 메시지 작성
+    $ git commit
+    # 인라인으로 커밋 메시지 작성
+    $ git commit -m "commit message"
+    # add 생략 (Tracked 상태 모두 추가)
+    $ git commit -a -m "commit message"
+    ```
+-   `push` : 로컬에서 새로 변경한 내용을 원격 저장소에 반영하기 위해 사용한다. `push` 명령어를 사용하면 자동으로 로컬에만 있는 커밋 뭉치만 Push 한다.
+    ```bash
+    $ git push origin master # origin의 master 브랜치를 로컬의 master 브랜치로 업데이트
+    ```
+-   `pull` : 지정한 리모트에서 Fetch한 다음 브랜치에 Merge를 시도한다. `push`와 마찬가지로 로컬에만 없는 커밋 뭉치만 받아와 저장한다. `pull`은 `fetch`와 `merge`를 순서대로 실행하기 때문에 좀 더 섬세한 작업을 위해서는 명령어를 분리하여 사용하는 것이 좋다.
+    ```bash
+    $ git pull origin master
+    ```
