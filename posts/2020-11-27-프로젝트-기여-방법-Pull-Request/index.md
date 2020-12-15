@@ -11,7 +11,6 @@ date: 2020-11-27
 -   [코드 리뷰 in 뱅크샐러드 개발 문화](https://blog.banksalad.com/tech/banksalad-code-review-culture/)
 -   [효과적인 코드 리뷰를 위해서 - LINE](https://engineering.linecorp.com/ko/blog/effective-codereview/)
 -   [우리는 코드 리뷰를 잘하고 있을까요?](https://medium.com/styleshare/%EC%9A%B0%EB%A6%AC%EB%8A%94-%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0%EB%A5%BC-%EC%9E%98%ED%95%98%EA%B3%A0-%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94-201c12d04d0d)
--   [마크다운 markdown 작성법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
 
 ---
 
