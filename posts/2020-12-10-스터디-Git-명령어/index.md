@@ -83,9 +83,12 @@ refs/ # 브랜치, 태그, 리모트 등을 저장
     ```bash
     $ git pull origin master
     ```
+<<<<<<< HEAD
 
 -   `fetch` : `fetch` 명령은 원격 저장소에서 로컬 데이터베이스에 있는 것을 제외하고 모두 가져온다. `pull`과는 다르게 자동으로 `merge`는 하지 않는다. 혼자 사용하는 저장소이거나 중요도가 높지 않다면 `pull`  명령어를 사용해도 문제 없지만, 진행 상황을 매 번 확인해야 하는 경우 사용한다. `fetch`를 한 다음 `diff` 명령어를 사용하면 병합을 하기 전에 변경될 내용을 미리 확인할 수 있다.
     ```bash
     $ git fetch origin
     $ git diff HEAD origin/master
     ```
+=======
+>>>>>>> refs/remotes/origin/master
