@@ -83,12 +83,14 @@ refs/ # 브랜치, 태그, 리모트 등을 저장
     ```bash
     $ git pull origin master
     ```
-<<<<<<< HEAD
 
 -   `fetch` : `fetch` 명령은 원격 저장소에서 로컬 데이터베이스에 있는 것을 제외하고 모두 가져온다. `pull`과는 다르게 자동으로 `merge`는 하지 않는다. 혼자 사용하는 저장소이거나 중요도가 높지 않다면 `pull`  명령어를 사용해도 문제 없지만, 진행 상황을 매 번 확인해야 하는 경우 사용한다. `fetch`를 한 다음 `diff` 명령어를 사용하면 병합을 하기 전에 변경될 내용을 미리 확인할 수 있다.
     ```bash
     $ git fetch origin
     $ git diff HEAD origin/master
     ```
-=======
->>>>>>> refs/remotes/origin/master
+    
+-   `merge` : 다른 브랜치를 현재 Checkout 된 브랜치에 병합한다. A 브랜치에서 B 브랜치를 병합한다고 할 때 만약 B 브랜치가 단순히 A 브랜치의 미래라면 `fast-forward`(빨리감기)로 이동하고, 서로 다른 커밋을 가지고 있다면 별도의 커밋을 통해 3-way Merge를 한다. 하지만 동일한 파일에서 수정이 일어났을 경우에는 두 방법 다 실패할 수 있다. 이 때 병합을 시도하면 충돌 에러 메시지가 출력되고 파일이 Unmerged 상태가 되는데, 파일을 확인해보면 충돌난 내용을 확인할 수 있다. 내용을 확인하여 수정한 다음 add & commit 을 통해 수동으로 해결할 수 있다.
+    ```bash
+    $ git merge origin/master
+    ```
