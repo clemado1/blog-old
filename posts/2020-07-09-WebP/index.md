@@ -1,6 +1,6 @@
 ---
 title: Webp 이미지 이용
-path: /2020-07-09-WebP-이미지-이용
+path: /2020-07-09-WebP
 type: post
 category: Dev
 date: 2020-07-09

@@ -1,6 +1,6 @@
 ---
 title: "[스터디] Git 기초"
-path: /2020-12-10-스터디-Git-명령어
+path: /2020-12-10-Git-study
 type: post
 category: Study
 date: 2020-12-10

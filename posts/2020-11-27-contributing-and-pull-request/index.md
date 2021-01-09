@@ -1,6 +1,6 @@
 ---
 title: 프로젝트 기여 방법 / Pull Request
-path: /2020-11-27-프로젝트-기여-방법-Pull-Request
+path: /2020-11-27-contributing-and-pull-request
 type: post
 category: Dev
 date: 2020-11-27
