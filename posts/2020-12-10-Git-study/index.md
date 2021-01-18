@@ -94,3 +94,7 @@ refs/ # 브랜치, 태그, 리모트 등을 저장
     ```bash
     $ git merge origin/master
     ```
+
+
+# 참고
+- 프로 Git 2판
