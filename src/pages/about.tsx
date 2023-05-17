@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
-import SEO from "../components/Seo";
+import Seo from "../components/Seo";
 import { useStaticQuery, graphql } from "gatsby";
 import { Query } from "../graphql-types";
 
@@ -25,10 +25,10 @@ const IndexPage: React.FC = () => {
 	const data = useStaticQuery<Query>(AboutMarkdown);
 	const post = data.allMarkdownRemark.edges;
 	const about = post.map(({ node }) => node)[0];
-
+	
 	return (
 		<Layout>
-			<SEO title="About" lang="" />
+			<Seo title="About" lang="" />
 			<div
 				className="pb-20"
 				dangerouslySetInnerHTML={{ __html: about.html }}

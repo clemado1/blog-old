@@ -6,9 +6,9 @@ const DistinctCategories = graphql`
 	query {
 		allMarkdownRemark {
 			totalCount
-			group(field: frontmatter___category) {
-				totalCount
-				fieldValue
+			group(field: {frontmatter: {category: SELECT}}) {
+			  totalCount
+			  fieldValue
 			}
 		}
 	}
